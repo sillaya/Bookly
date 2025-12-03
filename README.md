@@ -1,16 +1,17 @@
-# bookly
+# Bookly
 
-A new Flutter project.
+Bookly est une application mobile développée en Flutter visant à proposer des recommandations de lecture personnalisées grâce à une analyse entièrement locale des habitudes de l’utilisateur. Le système garantit autonomie, confidentialité et adaptabilité sans recourir à un serveur externe. Bookly constitue une base solide pour la mise en œuvre d’un système de recommandation autonome en Flutter avec SQLite.
 
-## Getting Started
+## Fonctionnalités
 
-This project is a starting point for a Flutter application.
+-Moteur de recommandation embarqué basé sur des algorithmes légers
 
-A few resources to get you started if this is your first Flutter project:
+-Suggestions personnalisées selon les préférences et comportements de lecture
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+-Fonctionnement hors-ligne sans connexion Internet obligatoire
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-Traitement local des données pour assurer la confidentialité
+
+-Interface simple, claire et intuitive
+
+Projet Sae fait par: GUESMI Mariem Aicha et ROUATBI Farah
