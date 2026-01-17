@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
+import '../front/accueil.dart';
+import '../front/recherche.dart';
 
 
 class BottomNavBar extends StatelessWidget {
@@ -154,19 +156,19 @@ class MainNavigationWrapper extends StatefulWidget {
 class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    const AccueilPlaceholder(),      // Index 0: Home
-    const PlaceholderPage(title: 'Recherche', icon: Icons.search_rounded),
-    const PlaceholderPage(title: 'Favoris', icon: Icons.favorite_rounded),
-    const PlaceholderPage(title: 'À lire', icon: Icons.bookmark_rounded),
-    const PlaceholderPage(title: 'Profil', icon: Icons.person_rounded),
-  ];
-
   void _onNavTap(int index) {
     setState(() {
       _currentIndex = index;
     });
   }
+
+  List<Widget> get _pages => [
+    const AccueilScreen(),      // Index 0: Home
+    const RechercheScreen(),    // Index 1: Search
+    const PlaceholderPage(title: 'Favoris', icon: Icons.favorite_rounded),
+    const PlaceholderPage(title: 'À lire', icon: Icons.bookmark_rounded),
+    const PlaceholderPage(title: 'Profil', icon: Icons.person_rounded),
+  ];
 
   @override
   Widget build(BuildContext context) {

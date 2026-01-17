@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
-import '../widgets/bottom_nav.dart';
 
 
 class AccueilScreen extends StatefulWidget {
@@ -11,15 +10,6 @@ class AccueilScreen extends StatefulWidget {
 }
 
 class _AccueilScreenState extends State<AccueilScreen> {
-  int _currentNavIndex = 0;
-
-  void _onNavTap(int index) {
-    setState(() {
-      _currentNavIndex = index;
-    });
-    
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,12 +18,12 @@ class _AccueilScreenState extends State<AccueilScreen> {
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            // HEADER 
+            // HEADER
             SliverToBoxAdapter(
               child: _buildHeader(),
             ),
 
-            // SECTION: RECOMMANDATIONS 
+            // SECTION: RECOMMANDATIONS
             SliverToBoxAdapter(
               child: _buildSectionTitle('Recommandé pour vous', onSeeAll: () {}),
             ),
@@ -41,7 +31,7 @@ class _AccueilScreenState extends State<AccueilScreen> {
               child: _buildBookCarousel(_recommendedBooks),
             ),
 
-            // SECTION: AUTHOR RECOMMENDATION 
+            // SECTION: AUTHOR RECOMMENDATION
             SliverToBoxAdapter(
               child: _buildAuthorSection(),
             ),
@@ -53,37 +43,20 @@ class _AccueilScreenState extends State<AccueilScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(
-        currentIndex: _currentNavIndex,
-        onTap: _onNavTap,
-      ),
     );
   }
 
-  /// HEADER WIDGET 
+  /// HEADER WIDGET
   Widget _buildHeader() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Bookly',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              color: AppColors.primary,
-            ),
-          ),
-          Image.asset(
-            'images/logo2.png',
-            width: 60,
-            height: 60,
-            errorBuilder: (context, error, stackTrace) {
-              return const SizedBox(width: 40, height: 40);
-            },
-          ),
-        ],
+      child: const Text(
+        'Bookly',
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          color: AppColors.primary,
+        ),
       ),
     );
   }

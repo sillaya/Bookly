@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'utils/constants.dart';
 import 'front/splash.dart';
-import 'front/accueil.dart';
+import 'widgets/bottom_nav.dart';
 
 
 class BooklyApp extends StatelessWidget {
@@ -46,7 +46,7 @@ class BooklyApp extends StatelessWidget {
       initialRoute: '/', // starting screen
       routes: {
         '/': (context) => const SplashScreen(),
-        '/home': (context) => const AccueilScreen(),
+        '/home': (context) => const MainNavigationWrapper(),
       },
     );
   }
