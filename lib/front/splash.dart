@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import '../utils/constants.dart';
-
-/// ===========================================
-/// SPLASH SCREEN
-/// ===========================================
-/// This is the first screen users see when
-/// opening the app. It shows:
-/// - The Bookly logo (animated fade + scale)
-/// - The tagline (animated fade)
-/// 
-/// After 3 seconds, it navigates to the next screen.
-/// ===========================================
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,65 +11,68 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  
-  // Animation controller manages our animations
+
   late AnimationController _controller;
-  
-  // Two animations: one for fade (opacity), one for scale (size)
-  late Animation<double> _fadeAnimation;
+
+  late Animation<double> _flipAnimation;
   late Animation<double> _scaleAnimation;
+  late Animation<double> _taglineFadeAnimation;
+  late Animation<double> _taglineScaleAnimation;
 
   @override
   void initState() {
     super.initState();
-    
-    // Initialize the animation controller
-    // Duration: how long the animation takes
+
     _controller = AnimationController(
-      vsync: this, // prevents animations when screen is not visible
-      duration: AppDurations.splashAnimation,
+      vsync: this,
+      duration: const Duration(milliseconds: 2000),
     );
 
-    // Fade animation: goes from 0 (invisible) to 1 (fully visible)
-    _fadeAnimation = Tween<double>(
+    _flipAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeIn, // starts slow, ends fast
+      curve: const Interval(0.0, 0.7, curve: Curves.easeInOutBack),
     ));
 
-    // Scale animation: goes from 0.8 (80% size) to 1.0 (full size)
     _scaleAnimation = Tween<double>(
-      begin: 0.8,
+      begin: 0.3,
       end: 1.0,
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.easeOutBack, // slight bounce at the end
+      curve: const Interval(0.0, 0.7, curve: Curves.easeOutCubic),
     ));
 
-    // Start the animation
-    _controller.forward();
+    _taglineFadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: const Interval(0.6, 1.0, curve: Curves.easeIn),
+    ));
+    _taglineScaleAnimation = Tween<double>(
+      begin: 0.5,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _controller,
+      curve: const Interval(0.6, 1.0, curve: Curves.easeOutBack),
+    ));
 
-    // After 3 seconds, navigate to next screen
-    //_navigateToNextScreen();
+    _controller.forward();
+    _navigateToNextScreen();
   }
 
-  /// Waits for splash duration, then navigates to next screen
   void _navigateToNextScreen() {
     Future.delayed(AppDurations.splashWait, () {
-      // TODO: Navigate to onboarding or home screen
-      // For now, we'll just print a message
-      // Later we'll replace this with actual navigation
       if (mounted) {
-        Navigator.pushReplacementNamed(context, '/onboarding');
+        Navigator.pushReplacementNamed(context, '/home');
       }
     });
   }
 
   @override
   void dispose() {
-    // Always dispose controllers to free memory
     _controller.dispose();
     super.dispose();
   }
@@ -87,47 +80,75 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Background color from our branding
       backgroundColor: AppColors.background,
-      
+
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,
           builder: (context, child) {
-            return Opacity(
-              opacity: _fadeAnimation.value,
-              child: Transform.scale(
-                scale: _scaleAnimation.value,
-                child: child,
-              ),
+            final angle = _flipAnimation.value * math.pi;
+
+            final isFlipped = _flipAnimation.value > 0.5;
+
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.identity()
+                    ..setEntry(3, 2, 0.001) 
+                    ..rotateY(angle),
+                  child: Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: Container(
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: isFlipped ? AppColors.background : AppColors.primary.withValues(alpha: 0.1),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primary.withValues(alpha: 0.2),
+                            blurRadius: 20,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationY(isFlipped ? math.pi : 0),
+                        child: Image.asset(
+                          'images/logo.png',
+                          width: 180,
+                          height: 180,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 40),
+
+                Opacity(
+                  opacity: _taglineFadeAnimation.value,
+                  child: Transform.scale(
+                    scale: _taglineScaleAnimation.value,
+                    child: Text(
+                      AppStrings.tagline,
+                      style: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: 18,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1.5,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ],
             );
           },
-          // The content that gets animated
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // ---------- LOGO ----------
-              Image.asset(
-                'images/logo.jpg',
-                width: 200,
-                height: 200,
-              ),
-              
-              const SizedBox(height: 20),
-              
-              // ---------- TAGLINE ----------
-              Text(
-                AppStrings.tagline,
-                style: TextStyle(
-                  color: AppColors.primary,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w500,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
         ),
       ),
     );

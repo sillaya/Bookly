@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 import 'utils/constants.dart';
 import 'front/splash.dart';
+import 'front/accueil.dart';
 
-/// ===========================================
-/// APP CONFIGURATION
-/// ===========================================
-/// This file sets up:
-/// - The MaterialApp (root of our Flutter app)
-/// - Theme (colors, text styles)
-/// - Routes (navigation between screens)
-/// ===========================================
 
 class BooklyApp extends StatelessWidget {
   const BooklyApp({super.key});
@@ -23,10 +16,7 @@ class BooklyApp extends StatelessWidget {
       
       // ---------- THEME ----------
       theme: ThemeData(
-        // Use Material 3 design
         useMaterial3: true,
-        
-        // Color scheme based on our branding
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primary,
           primary: AppColors.primary,
@@ -35,8 +25,20 @@ class BooklyApp extends StatelessWidget {
           surface: AppColors.background,
         ),
         
-        // Default background color
         scaffoldBackgroundColor: AppColors.background,
+        
+        textTheme: const TextTheme(
+          headlineLarge: TextStyle(
+            color: AppColors.primary,
+            fontWeight: FontWeight.bold,
+          ),
+          headlineMedium: TextStyle(
+            color: AppColors.primary,
+            fontWeight: FontWeight.bold,
+          ),
+          bodyLarge: TextStyle(color: AppColors.primary),
+          bodyMedium: TextStyle(color: AppColors.primary),
+        ),
       ),
       
       // ---------- ROUTES ----------
@@ -44,12 +46,7 @@ class BooklyApp extends StatelessWidget {
       initialRoute: '/', // starting screen
       routes: {
         '/': (context) => const SplashScreen(),
-        // TODO: Add more routes as we create screens
-        // '/onboarding': (context) => const OnboardingScreen(),
-        // '/home': (context) => const HomeScreen(),
-        // '/search': (context) => const SearchScreen(),
-        // '/library': (context) => const LibraryScreen(),
-        // '/profile': (context) => const ProfileScreen(),
+        '/home': (context) => const AccueilScreen(),
       },
     );
   }

@@ -1,16 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// ===========================================
-/// BOOKLY - App Constants
-/// ===========================================
-/// This file contains all the constant values
-/// used throughout the app: colors, text styles,
-/// dimensions, and strings.
-/// ===========================================
-
-// ---------------- COLORS ----------------
-// Based on the Bookly branding report
-
 class AppColors {
   // Primary: Marron Chocolat - stability, classic libraries
   static const Color primary = Color(0xFF7B542F);
