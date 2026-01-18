@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../back/models/book.dart';
 import '../back/providers/book_provider.dart';
-import '../widgets/book_card.dart';
 import '../utils/constants.dart';
 
 class LusScreen extends StatefulWidget {
