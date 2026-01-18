@@ -1,289 +1,241 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../back/models/book.dart';
+import '../back/providers/book_provider.dart';
+import '../widgets/book_card.dart';
 import '../utils/constants.dart';
 
-
-class AccueilScreen extends StatefulWidget {
+class AccueilScreen extends StatelessWidget {
   const AccueilScreen({super.key});
 
-  @override
-  State<AccueilScreen> createState() => _AccueilScreenState();
-}
-
-class _AccueilScreenState extends State<AccueilScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      body: SafeArea(
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            // HEADER
-            SliverToBoxAdapter(
-              child: _buildHeader(),
-            ),
+      body: Consumer<BookProvider>(
+        builder: (context, provider, _) {
+          if (provider.isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(color: AppColors.primary),
+            );
+          }
 
-            // SECTION: RECOMMANDATIONS
-            SliverToBoxAdapter(
-              child: _buildSectionTitle('Recommandé pour vous', onSeeAll: () {}),
-            ),
-            SliverToBoxAdapter(
-              child: _buildBookCarousel(_recommendedBooks),
-            ),
+          if (provider.error != null) {
+            return _buildErrorState(context, provider);
+          }
 
-            // SECTION: AUTHOR RECOMMENDATION
-            SliverToBoxAdapter(
-              child: _buildAuthorSection(),
-            ),
-
-            // Bottom padding for nav bar
-            const SliverToBoxAdapter(
-              child: SizedBox(height: 100),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// HEADER WIDGET
-  Widget _buildHeader() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
-      child: const Text(
-        'Bookly',
-        style: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.w700,
-          color: AppColors.primary,
-        ),
-      ),
-    );
-  }
-
-  /// AUTHOR RECOMMENDATION SECTION 
-  Widget _buildAuthorSection() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Vous avez aimé',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
+          return SafeArea(
+            child: RefreshIndicator(
+              onRefresh: provider.loadBooks,
               color: AppColors.primary,
-            ),
-          ),
-          const SizedBox(height: 12),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: AppColors.primary.withValues(alpha: 0.1),
-                width: 1,
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      width: 50,
-                      height: 75,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: AppColors.primary.withValues(alpha: 0.1),
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.book,
-                          color: AppColors.primary.withValues(alpha: 0.4),
-                          size: 24,
-                        ),
+              child: CustomScrollView(
+                physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics(),
+                ),
+                slivers: [
+                  // Header
+                  SliverToBoxAdapter(child: _buildHeader()),
+
+                  // Section: Recommandations
+                  if (provider.recommendedBooks.isNotEmpty) ...[
+                    SliverToBoxAdapter(
+                      child: _buildSectionTitle(
+                        'Recommandé pour vous',
+                        subtitle: _getRecommendationSubtitle(provider),
                       ),
                     ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Le Petit Prince',
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
-                            ),
-                          ),
-                          const SizedBox(height: 2),
-                          Text(
-                            'Antoine de Saint-Exupéry',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: AppColors.primary.withValues(alpha: 0.6),
-                            ),
-                          ),
-                        ],
+                    SliverToBoxAdapter(
+                      child: _buildBookCarousel(
+                        provider.recommendedBooks.take(10).toList(),
                       ),
                     ),
                   ],
-                ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Autres livres',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.primary,
+
+                  // Section: Continuer la lecture (livres favoris non lus)
+                  if (_getToReadBooks(provider).isNotEmpty) ...[
+                    SliverToBoxAdapter(
+                      child: _buildSectionTitle('À lire bientôt'),
+                    ),
+                    SliverToBoxAdapter(
+                      child: _buildBookCarousel(_getToReadBooks(provider)),
+                    ),
+                  ],
+
+                  // Section: Par genre préféré
+                  if (provider.favoriteBooks.isNotEmpty || provider.readBooks.isNotEmpty) ...[
+                    SliverToBoxAdapter(
+                      child: _buildFavoriteGenreSection(provider),
+                    ),
+                  ],
+
+                  // Section: Découvrir
+                  SliverToBoxAdapter(
+                    child: _buildSectionTitle('Découvrir'),
                   ),
-                ),
-                const SizedBox(height: 8),
-                _buildAuthorBookList(),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+                  SliverToBoxAdapter(
+                    child: _buildBookCarousel(
+                      provider.books.take(10).toList(),
+                    ),
+                  ),
 
-  /// AUTHOR BOOK LIST
-  Widget _buildAuthorBookList() {
-    return Column(
-      children: [
-        _buildAuthorBook('Vol de nuit'),
-        const SizedBox(height: 8),
-        _buildAuthorBook('Terre des hommes'),
-        const SizedBox(height: 8),
-        _buildAuthorBook('Courrier Sud'),
-      ],
-    );
-  }
-
-  ///  AUTHOR BOOK ITEM 
-  Widget _buildAuthorBook(String title) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: AppColors.primary.withValues(alpha: 0.1),
-            width: 1,
-          ),
-        ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 14,
-                color: AppColors.primary,
+                  // Bottom padding
+                  const SliverToBoxAdapter(
+                    child: SizedBox(height: 100),
+                  ),
+                ],
               ),
             ),
-          ),
-          Icon(
-            Icons.chevron_right,
-            size: 18,
-            color: AppColors.primary.withValues(alpha: 0.4),
-          ),
-        ],
-      ),
-    );
-  }
-
-  /// SECTION TITLE WIDGET
-  Widget _buildSectionTitle(String title, {VoidCallback? onSeeAll}) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 12),
-      child: Text(
-        title,
-        style: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: AppColors.primary,
-        ),
-      ),
-    );
-  }
-
-  ///BOOK CAROUSEL WIDGET 
-  Widget _buildBookCarousel(List<Map<String, String>> books) {
-    return SizedBox(
-      height: 220,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        itemCount: books.length,
-        itemBuilder: (context, index) {
-          return _BookCard(book: books[index]);
+          );
         },
       ),
     );
   }
 
-}
+  Widget _buildHeader() {
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(20, 16, 20, 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Bookly',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w700,
+              color: AppColors.primary,
+            ),
+          ),
+          SizedBox(height: 4),
+          Text(
+            'Bienvenue ! Que voulez-vous lire aujourd\'hui ?',
+            style: TextStyle(
+              fontSize: 14,
+              color: AppColors.primary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
-/// BOOK CARD WIDGET 
-class _BookCard extends StatelessWidget {
-  final Map<String, String> book;
-
-  const _BookCard({required this.book});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-      },
-      child: Container(
-        width: 120,
-        margin: const EdgeInsets.only(right: 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Book cover
-            Container(
-              height: 160,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: AppColors.primary.withValues(alpha: 0.1),
+  Widget _buildSectionTitle(String title, {String? subtitle}) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 24, 20, 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: AppColors.primary,
+            ),
+          ),
+          if (subtitle != null) ...[
+            const SizedBox(height: 2),
+            Text(
+              subtitle,
+              style: TextStyle(
+                fontSize: 12,
+                color: AppColors.primary.withValues(alpha: 0.6),
               ),
-              child: Center(
-                child: Icon(
-                  Icons.book,
-                  color: AppColors.primary.withValues(alpha: 0.3),
-                  size: 40,
-                ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBookCarousel(List<Book> books) {
+    return SizedBox(
+      height: 240,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        physics: const BouncingScrollPhysics(),
+        itemCount: books.length,
+        itemBuilder: (context, index) {
+          return CompactBookCard(book: books[index]);
+        },
+      ),
+    );
+  }
+
+  Widget _buildFavoriteGenreSection(BookProvider provider) {
+    final stats = provider.statistics;
+    final favoriteGenre = stats['favoriteGenre'] as String;
+    
+    if (favoriteGenre == 'Aucun') return const SizedBox.shrink();
+
+    final genreBooks = provider.books
+      .where((b) => b.genre == favoriteGenre && !b.isRead && !b.isFavorite)
+      .take(5)
+      .toList();
+
+    if (genreBooks.isEmpty) return const SizedBox.shrink();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildSectionTitle(
+          'Parce que vous aimez $favoriteGenre',
+          subtitle: 'Basé sur vos lectures',
+        ),
+        SizedBox(
+          height: 240,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            physics: const BouncingScrollPhysics(),
+            itemCount: genreBooks.length,
+            itemBuilder: (context, index) {
+              return CompactBookCard(book: genreBooks[index]);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildErrorState(BuildContext context, BookProvider provider) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error_outline,
+              size: 64,
+              color: AppColors.primary.withValues(alpha: 0.5),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Oups ! Une erreur est survenue',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: AppColors.primary.withValues(alpha: 0.8),
               ),
             ),
             const SizedBox(height: 8),
-            // Title
             Text(
-              book['title'] ?? 'Titre du livre',
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primary,
-                height: 1.3,
+              provider.error ?? 'Erreur inconnue',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 14,
+                color: AppColors.primary.withValues(alpha: 0.6),
               ),
             ),
-            const SizedBox(height: 2),
-            // Author
-            Text(
-              book['author'] ?? 'Auteur',
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 12,
-                color: AppColors.primary.withValues(alpha: 0.5),
+            const SizedBox(height: 24),
+            ElevatedButton.icon(
+              onPressed: provider.loadBooks,
+              icon: const Icon(Icons.refresh),
+              label: const Text('Réessayer'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primary,
+                foregroundColor: AppColors.white,
               ),
             ),
           ],
@@ -291,18 +243,22 @@ class _BookCard extends StatelessWidget {
       ),
     );
   }
+
+  String _getRecommendationSubtitle(BookProvider provider) {
+    final stats = provider.statistics;
+    final readCount = stats['read'] as int;
+    final favCount = stats['favorites'] as int;
+    
+    if (readCount == 0 && favCount == 0) {
+      return 'Ajoutez des favoris pour des recommandations personnalisées';
+    }
+    return 'Basé sur vos ${readCount + favCount} livres';
+  }
+
+  List<Book> _getToReadBooks(BookProvider provider) {
+    return provider.favoriteBooks
+      .where((b) => !b.isRead)
+      .take(5)
+      .toList();
+  }
 }
-
-
-// ==========================================
-// MOCK DATA (Replace with real data later)
-// ==========================================
-
-final List<Map<String, String>> _recommendedBooks = [
-  {'title': 'L\'Étranger', 'author': 'Albert Camus', 'rating': '4.8'},
-  {'title': 'Les Misérables', 'author': 'Victor Hugo', 'rating': '4.9'},
-  {'title': 'Madame Bovary', 'author': 'Gustave Flaubert', 'rating': '4.6'},
-  {'title': 'Le Rouge et le Noir', 'author': 'Stendhal', 'rating': '4.5'},
-  {'title': 'Germinal', 'author': 'Émile Zola', 'rating': '4.7'},
-];
-

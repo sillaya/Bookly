@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 import '../front/accueil.dart';
 import '../front/recherche.dart';
+import '../front/favoris.dart';
+import '../front/lus.dart';
+import '../front/profil.dart';
 
-
+/// Barre de navigation principale
 class BottomNavBar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
@@ -56,8 +59,8 @@ class BottomNavBar extends StatelessWidget {
                 onTap: () => onTap(2),
               ),
               _NavItem(
-                icon: Icons.bookmark_rounded,
-                label: 'À lire',
+                icon: Icons.check_circle_rounded,
+                label: 'Lus',
                 isSelected: currentIndex == 3,
                 onTap: () => onTap(3),
               ),
@@ -75,7 +78,7 @@ class BottomNavBar extends StatelessWidget {
   }
 }
 
-/// Individual navigation item with animation
+/// Élément de navigation individuel avec animation
 class _NavItem extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -110,18 +113,20 @@ class _NavItem extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Icon with animation
+            // Icône avec animation
             AnimatedScale(
               scale: isSelected ? 1.1 : 1.0,
               duration: const Duration(milliseconds: 200),
               child: Icon(
                 icon,
-                color: isSelected ? AppColors.primary : AppColors.primary.withValues(alpha: 0.5),
+                color: isSelected 
+                  ? AppColors.primary 
+                  : AppColors.primary.withValues(alpha: 0.5),
                 size: 26,
               ),
             ),
             
-            // Label (only shown when selected)
+            // Label (visible uniquement quand sélectionné)
             AnimatedSize(
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeOutCubic,
@@ -130,7 +135,7 @@ class _NavItem extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 8),
                       child: Text(
                         label,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppColors.primary,
                           fontWeight: FontWeight.w600,
                           fontSize: 13,
@@ -146,6 +151,7 @@ class _NavItem extends StatelessWidget {
   }
 }
 
+/// Wrapper principal de navigation
 class MainNavigationWrapper extends StatefulWidget {
   const MainNavigationWrapper({super.key});
 
@@ -162,17 +168,19 @@ class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
     });
   }
 
-  List<Widget> get _pages => [
-    const AccueilScreen(),      // Index 0: Home
-    const RechercheScreen(),    // Index 1: Search
-    const PlaceholderPage(title: 'Favoris', icon: Icons.favorite_rounded),
-    const PlaceholderPage(title: 'À lire', icon: Icons.bookmark_rounded),
-    const PlaceholderPage(title: 'Profil', icon: Icons.person_rounded),
+  // Liste des écrans - tous implémentés maintenant !
+  List<Widget> get _pages => const [
+    AccueilScreen(),     // Index 0: Accueil
+    RechercheScreen(),   // Index 1: Recherche
+    FavorisScreen(),     // Index 2: Favoris
+    LusScreen(),         // Index 3: Livres lus
+    ProfilScreen(),      // Index 4: Profil
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // IndexedStack garde l'état de chaque page
       body: IndexedStack(
         index: _currentIndex,
         children: _pages,
@@ -180,64 +188,6 @@ class _MainNavigationWrapperState extends State<MainNavigationWrapper> {
       bottomNavigationBar: BottomNavBar(
         currentIndex: _currentIndex,
         onTap: _onNavTap,
-      ),
-    );
-  }
-}
-
-class AccueilPlaceholder extends StatelessWidget {
-  const AccueilPlaceholder({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Accueil - Replace with AccueilScreen'),
-    );
-  }
-}
-
-class PlaceholderPage extends StatelessWidget {
-  final String title;
-  final IconData icon;
-
-  const PlaceholderPage({
-    super.key,
-    required this.title,
-    required this.icon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              size: 64,
-              color: AppColors.primary.withValues(alpha: 0.3),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: AppColors.primary.withValues(alpha: 0.5),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Bientôt disponible',
-              style: TextStyle(
-                fontSize: 14,
-                color: AppColors.primary.withValues(alpha: 0.4),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
