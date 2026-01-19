@@ -4,8 +4,6 @@ import '../back/models/book.dart';
 import '../back/providers/book_provider.dart';
 import '../utils/constants.dart';
 
-/// Widget de carte de livre réutilisable
-/// Affiche les infos du livre avec actions (favori, lu, note)
 
 class BookCard extends StatelessWidget {
   final Book book;

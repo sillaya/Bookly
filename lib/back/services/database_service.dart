@@ -1,10 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-/// Service de base de données SQLite
-/// Gère la persistance des états utilisateur (favoris, lus, notes)
-/// 
-/// Pattern Singleton pour une seule instance de connexion
+
 
 class DatabaseService {
   // ==================== SINGLETON ====================

@@ -4,13 +4,6 @@ import 'package:flutter/services.dart';
 import '../models/book.dart';
 import '../services/database_service.dart';
 
-/// Provider pour la gestion des livres
-/// Utilise ChangeNotifier pour la réactivité avec Provider
-/// 
-/// Algorithme de recommandation pondéré:
-/// - 50% Genre préféré
-/// - 30% Auteur préféré  
-/// - 20% Basé sur les notes (rating)
 
 class BookProvider with ChangeNotifier {
   // ==================== STATE ====================

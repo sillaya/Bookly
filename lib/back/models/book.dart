@@ -1,8 +1,3 @@
-/// Book Model
-/// Représente un livre avec ses métadonnées et l'état utilisateur
-/// 
-/// [rating] : Note de 0 à 5 étoiles (0 = non noté)
-/// Utilisé dans l'algorithme de recommandation
 
 class Book {
   final String id;
