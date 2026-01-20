@@ -298,9 +298,9 @@ class _RechercheScreenState extends State<RechercheScreen> {
           sliver: SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              childAspectRatio: 0.55,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 16,
+              childAspectRatio: 0.48,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 12,
             ),
             delegate: SliverChildBuilderDelegate(
               (context, index) {
@@ -373,87 +373,102 @@ class _GridBookCard extends StatelessWidget {
           builder: (context) => BookDetailsSheet(book: book),
         );
       },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Image avec taille fixe
-          AspectRatio(
-            aspectRatio: 0.65,
-            child: Stack(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    book.imageUrl,
-                    width: double.infinity,
-                    height: double.infinity,
-                    fit: BoxFit.cover,
-                    errorBuilder: (c, e, s) => Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.primary.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Icon(
-                        Icons.book,
-                        color: AppColors.primary.withValues(alpha: 0.3),
-                        size: 32,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // Calculer la hauteur de l'image (environ 70% de la hauteur totale)
+          final imageHeight = constraints.maxHeight * 0.70;
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Image avec hauteur calculée
+              SizedBox(
+                height: imageHeight,
+                width: double.infinity,
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.network(
+                        book.imageUrl,
+                        width: double.infinity,
+                        height: double.infinity,
+                        fit: BoxFit.cover,
+                        errorBuilder: (c, e, s) => Container(
+                          decoration: BoxDecoration(
+                            color: AppColors.primary.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: const Center(
+                            child: Icon(
+                              Icons.book,
+                              color: AppColors.primary,
+                              size: 28,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+
+                    // Badge favori/lu
+                    if (book.isFavorite || book.isRead)
+                      Positioned(
+                        top: 4,
+                        right: 4,
+                        child: Container(
+                          padding: const EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            color: AppColors.white.withValues(alpha: 0.9),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              if (book.isFavorite)
+                                const Icon(Icons.favorite, size: 10, color: Colors.red),
+                              if (book.isRead)
+                                const Icon(Icons.check_circle, size: 10, color: Colors.green),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
+              ),
+              const SizedBox(height: 4),
 
-                // Badge favori/lu
-                if (book.isFavorite || book.isRead)
-                  Positioned(
-                    top: 4,
-                    right: 4,
-                    child: Container(
-                      padding: const EdgeInsets.all(3),
-                      decoration: BoxDecoration(
-                        color: AppColors.white.withValues(alpha: 0.9),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (book.isFavorite)
-                            const Icon(Icons.favorite, size: 12, color: Colors.red),
-                          if (book.isRead)
-                            const Icon(Icons.check_circle, size: 12, color: Colors.green),
-                        ],
+              // Titre - utilise Expanded pour prendre l'espace restant
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      book.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.primary,
+                        height: 1.15,
                       ),
                     ),
-                  ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 6),
-
-          // Titre
-          Text(
-            book.title,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primary,
-              height: 1.2,
-            ),
-          ),
-          const SizedBox(height: 2),
-
-          // Auteur
-          Text(
-            book.author,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: 11,
-              color: AppColors.primary.withValues(alpha: 0.5),
-            ),
-          ),
-        ],
+                    const SizedBox(height: 1),
+                    Text(
+                      book.author,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: AppColors.primary.withValues(alpha: 0.5),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
