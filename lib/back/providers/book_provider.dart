@@ -58,129 +58,119 @@ class BookProvider with ChangeNotifier {
     }).toList();
   }
 
-  // ==================== ALGORITHME DE RECOMMANDATION ====================
+// ==================== ALGORITHME DE RECOMMANDATION ====================
 
-  /// Livres recommandés basés sur les préférences utilisateur
-  /// Pondération: 40% favoris + 60% livres lus avec 4+ étoiles (ou 3 si pas de 4+)
-  /// Retourne 20 livres recommandés
-  List<Book> get recommendedBooks {
-    // Séparer les livres favoris et les livres bien notés
-    final favoriteBooks = _books.where((b) => b.isFavorite).toList();
-
-    // Livres lus avec bonnes notes (4+ étoiles prioritaire, sinon 3 étoiles)
-    final highRatedBooks = _books.where((b) => b.isRead && b.rating >= 4).toList();
-    final midRatedBooks = _books.where((b) => b.isRead && b.rating == 3).toList();
-
-    // Utiliser les livres 4+ étoiles, sinon fallback sur 3 étoiles
-    final ratedBooksForAlgo = highRatedBooks.isNotEmpty ? highRatedBooks : midRatedBooks;
-
-    // Si aucun historique, retourne les premiers livres
-    if (favoriteBooks.isEmpty && ratedBooksForAlgo.isEmpty) {
-      return _books.take(20).toList();
+List<Book> get recommendedBooks {
+  // ========== ÉTAPE 1: COLLECTE DES DONNÉES ==========
+  final favoriteBooks = <Book>[];    
+  final highRatedBooks = <Book>[];     
+  final midRatedBooks = <Book>[];    
+  final candidates = <Book>[];         
+  
+  for (var book in _books) {
+    if (book.isFavorite) {
+      favoriteBooks.add(book);
     }
-
-    // Comptabilisation des genres et auteurs préférés
-    Map<String, double> genreScores = {};
-    Map<String, double> authorScores = {};
-
-    // Score des favoris (40% du poids total)
-    for (var book in favoriteBooks) {
-      double weight = 4.0; // Poids de base pour favoris
-      genreScores[book.genre] = (genreScores[book.genre] ?? 0) + weight * 0.4;
-      authorScores[book.author] = (authorScores[book.author] ?? 0) + weight * 0.4;
+    
+    if (book.isRead) {
+      if (book.rating >= 4) {
+        highRatedBooks.add(book);
+      } else if (book.rating == 3) {
+        midRatedBooks.add(book);
+      }
     }
-
-    // Score des livres bien notés (60% du poids total)
-    for (var book in ratedBooksForAlgo) {
-      double weight = book.rating.toDouble(); // Poids basé sur la note (3, 4 ou 5)
-      genreScores[book.genre] = (genreScores[book.genre] ?? 0) + weight * 0.6;
-      authorScores[book.author] = (authorScores[book.author] ?? 0) + weight * 0.6;
+    
+    if (!book.isRead && !book.isFavorite) {
+      candidates.add(book);
     }
-
-    // Normalisation
-    double maxGenreScore = genreScores.values.fold(0.0, (a, b) => a > b ? a : b);
-    double maxAuthorScore = authorScores.values.fold(0.0, (a, b) => a > b ? a : b);
-
-    if (maxGenreScore == 0) maxGenreScore = 1;
-    if (maxAuthorScore == 0) maxAuthorScore = 1;
-
-    // Livres candidats (non lus et non favoris)
-    List<Book> candidates = _books.where((b) =>
-      !b.isRead && !b.isFavorite
-    ).toList();
-
-    // Calcul du score de recommandation pour chaque candidat
-    List<MapEntry<Book, double>> scoredCandidates = candidates.map((book) {
-      // Score Genre (60% de l'importance)
-      double genreWeight = (genreScores[book.genre] ?? 0) / maxGenreScore;
-      double genreScore = genreWeight * 60;
-
-      // Score Auteur (40% de l'importance)
-      double authorWeight = (authorScores[book.author] ?? 0) / maxAuthorScore;
-      double authorScore = authorWeight * 40;
-
-      double totalScore = genreScore + authorScore;
-      return MapEntry(book, totalScore);
-    }).toList();
-
-    // Tri par score décroissant
-    scoredCandidates.sort((a, b) => b.value.compareTo(a.value));
-
-    // Retourner les 20 meilleurs
-    return scoredCandidates.take(20).map((e) => e.key).toList();
   }
-
-  /// Livres à découvrir - livres avec des genres/auteurs différents des préférences
-  /// Retourne 30-40 livres pour élargir les horizons de lecture
-  List<Book> get discoverBooks {
-    // Genres et auteurs déjà connus de l'utilisateur
-    final knownGenres = <String>{};
-    final knownAuthors = <String>{};
-
-    for (var book in _books) {
-      if (book.isFavorite || book.isRead) {
-        knownGenres.add(book.genre);
-        knownAuthors.add(book.author);
-      }
-    }
-
-    // Livres candidats (non lus et non favoris)
-    List<Book> candidates = _books.where((b) =>
-      !b.isRead && !b.isFavorite
-    ).toList();
-
-    // Si pas d'historique, mélanger et retourner
-    if (knownGenres.isEmpty) {
-      candidates.shuffle();
-      return candidates.take(35).toList();
-    }
-
-    // Calculer le score de "découverte" - plus élevé si genre/auteur inconnu
-    List<MapEntry<Book, double>> scoredCandidates = candidates.map((book) {
-      double score = 0;
-
-      // Bonus si genre inconnu (plus de diversité)
-      if (!knownGenres.contains(book.genre)) {
-        score += 50;
-      }
-
-      // Bonus si auteur inconnu
-      if (!knownAuthors.contains(book.author)) {
-        score += 30;
-      }
-
-      // Petit bonus aléatoire pour varier les résultats
-      score += (book.id.hashCode % 20).toDouble();
-
-      return MapEntry(book, score);
-    }).toList();
-
-    // Tri par score décroissant (nouveaux genres/auteurs en premier)
-    scoredCandidates.sort((a, b) => b.value.compareTo(a.value));
-
-    // Retourner entre 30 et 40 livres
-    return scoredCandidates.take(35).map((e) => e.key).toList();
+  
+  final ratedBooks = highRatedBooks.isNotEmpty ? highRatedBooks : midRatedBooks;
+  
+  // ========== ÉTAPE 2: CAS SPÉCIAL - PAS D'HISTORIQUE ==========
+  if (favoriteBooks.isEmpty && ratedBooks.isEmpty) {
+    return candidates.take(20).toList();
   }
+  
+  // ========== ÉTAPE 3: CALCUL DES SCORES DE PRÉFÉRENCE ==========
+  final genreScores = <String, double>{};
+  final authorScores = <String, double>{};
+  
+  // --- Scoring des favoris (40% du poids total) ---
+  for (var book in favoriteBooks) {
+    genreScores[book.genre] = (genreScores[book.genre] ?? 0) + 2;
+    authorScores[book.author] = (authorScores[book.author] ?? 0) + 2;
+  }
+  
+  // --- Scoring des livres bien notés (60% du poids total) ---
+  // Le poids varie selon la note: 3×0.6=1.8, 4×0.6=2.4, 5×0.6=3.0
+  for (var book in ratedBooks) {
+    final weight = book.rating * 0.6; 
+    genreScores[book.genre] = (genreScores[book.genre] ?? 0) + weight;
+    authorScores[book.author] = (authorScores[book.author] ?? 0) + weight;
+  }
+  
+  // ========== ÉTAPE 4: CALCUL DES SCORES POUR CHAQUE CANDIDAT ==========
+  final scores = candidates.map((book) {
+    final genreScore = (genreScores[book.genre] ?? 0) * 60;
+    final authorScore = (authorScores[book.author] ?? 0) * 40;
+    return genreScore + authorScore;
+  }).toList();
+  
+  // ========== ÉTAPE 5: TRI ET SÉLECTION DES TOP 20 ==========
+  final indices = List.generate(candidates.length, (i) => i);
+  indices.sort((a, b) => scores[b].compareTo(scores[a]));
+  return indices.take(20).map((i) => candidates[i]).toList();
+}
+
+// ==================== ALGORITHME DE DÉCOUVERTE ====================
+List<Book> get discoverBooks {
+  // ========== ÉTAPE 1: COLLECTE DES PRÉFÉRENCES CONNUES ==========
+  final knownGenres = <String>{};     
+  final knownAuthors = <String>{};    
+  final candidates = <Book>[];        
+  
+  for (var book in _books) {
+    if (book.isFavorite || book.isRead) {
+      knownGenres.add(book.genre);
+      knownAuthors.add(book.author);
+    }
+    
+    // Si le livre n'est pas connu, c'est un candidat à la découverte
+    if (!book.isRead && !book.isFavorite) {
+      candidates.add(book);
+    }
+  }
+  
+  // ========== ÉTAPE 2: CAS SPÉCIAL - PAS D'HISTORIQUE ==========
+  if (knownGenres.isEmpty) {
+    candidates.shuffle();
+    return candidates.take(35).toList();
+  }
+  
+  // ========== ÉTAPE 3: CALCUL DU SCORE DE DÉCOUVERTE ==========
+  final scores = candidates.map((book) {
+    double score = 0;
+
+    if (!knownGenres.contains(book.genre)) {
+      score += 50;
+    }
+    
+    if (!knownAuthors.contains(book.author)) {
+      score += 30;
+    }
+    
+    score += (book.id.hashCode % 20);
+    
+    return score;
+  }).toList();
+  
+  // ========== ÉTAPE 4: TRI ET SÉLECTION DES TOP 35 ==========
+  final indices = List.generate(candidates.length, (i) => i);
+  indices.sort((a, b) => scores[b].compareTo(scores[a]));
+
+  return indices.take(35).map((i) => candidates[i]).toList();
+}
 
   // ==================== DATA LOADING ====================
 
