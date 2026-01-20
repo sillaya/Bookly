@@ -36,7 +36,7 @@ class AccueilScreen extends StatelessWidget {
                   // Header
                   SliverToBoxAdapter(child: _buildHeader()),
 
-                  // Section: Recommandations
+                  // Section: Recommandations (20 livres)
                   if (provider.recommendedBooks.isNotEmpty) ...[
                     SliverToBoxAdapter(
                       child: _buildSectionTitle(
@@ -45,9 +45,7 @@ class AccueilScreen extends StatelessWidget {
                       ),
                     ),
                     SliverToBoxAdapter(
-                      child: _buildBookCarousel(
-                        provider.recommendedBooks.take(10).toList(),
-                      ),
+                      child: _buildBookCarousel(provider.recommendedBooks),
                     ),
                   ],
 
@@ -68,15 +66,18 @@ class AccueilScreen extends StatelessWidget {
                     ),
                   ],
 
-                  // Section: Découvrir
-                  SliverToBoxAdapter(
-                    child: _buildSectionTitle('Découvrir'),
-                  ),
-                  SliverToBoxAdapter(
-                    child: _buildBookCarousel(
-                      provider.books.take(10).toList(),
+                  // Section: Découvrir (30-40 livres avec genres/auteurs différents)
+                  if (provider.discoverBooks.isNotEmpty) ...[
+                    SliverToBoxAdapter(
+                      child: _buildSectionTitle(
+                        'Découvrir',
+                        subtitle: 'Explorez de nouveaux genres et auteurs',
+                      ),
                     ),
-                  ),
+                    SliverToBoxAdapter(
+                      child: _buildBookCarousel(provider.discoverBooks),
+                    ),
+                  ],
 
                   // Bottom padding
                   const SliverToBoxAdapter(

@@ -1,102 +1,1602 @@
 [
-  { "id": "1", "title": "1984", "author": "George Orwell", "genre": "Dystopie", "description": "Un futur sombre sous surveillance.", "imageUrl": "https://covers.openlibrary.org/b/id/7222246-L.jpg" },
-  { "id": "2", "title": "Le Petit Prince", "author": "Antoine de Saint-Exupéry", "genre": "Philosophie", "description": "Un conte pour tous les âges.", "imageUrl": "https://covers.openlibrary.org/b/id/8259449-L.jpg" },
-  { "id": "3", "title": "Shining", "author": "Stephen King", "genre": "Horreur", "description": "La folie dans un hôtel désert.", "imageUrl": "https://covers.openlibrary.org/b/id/10521262-L.jpg" },
-  { "id": "4", "title": "Fondation", "author": "Isaac Asimov", "genre": "Sci-Fi", "description": "L'avenir de l'humanité dans les étoiles.", "imageUrl": "https://covers.openlibrary.org/b/id/10582234-L.jpg" },
-  { "id": "5", "title": "Dix Petits Nègres", "author": "Agatha Christie", "genre": "Policier", "description": "Un huis clos mortel sur une île.", "imageUrl": "https://covers.openlibrary.org/b/id/10521249-L.jpg" },
-  { "id": "6", "title": "Dune", "author": "Frank Herbert", "genre": "Sci-Fi", "description": "Le destin d'Arrakis.", "imageUrl": "https://covers.openlibrary.org/b/id/12730627-L.jpg" },
-  { "id": "7", "title": "Le Colorado", "author": "Stephen King", "genre": "Policier", "description": "Une enquête mystérieuse par un maître de l'horreur.", "imageUrl": "https://covers.openlibrary.org/b/id/10521325-L.jpg" },
-  { "id": "8", "title": "Harry Potter 1", "author": "J.K. Rowling", "genre": "Fantasy", "description": "L'école des sorciers.", "imageUrl": "https://covers.openlibrary.org/b/id/10522137-L.jpg" },
-  { "id": "9", "title": "Une brève histoire du temps", "author": "Stephen Hawking", "genre": "Histoire", "description": "Comprendre l'univers.", "imageUrl": "https://covers.openlibrary.org/b/id/10521326-L.jpg" },
-  { "id": "10", "title": "Sapiens", "author": "Yuval Noah Harari", "genre": "Histoire", "description": "L'histoire de l'humanité.", "imageUrl": "https://covers.openlibrary.org/b/id/10521254-L.jpg" },
-  { "id": "11", "title": "Fahrenheit 451", "author": "Ray Bradbury", "genre": "Dystopie", "description": "Le feu brûle les idées.", "imageUrl": "https://covers.openlibrary.org/b/id/10521245-L.jpg" },
-  { "id": "12", "title": "Sherlock Holmes", "author": "Arthur Conan Doyle", "genre": "Policier", "description": "Élémentaire, mon cher Watson.", "imageUrl": "https://covers.openlibrary.org/b/id/10521239-L.jpg" },
-  { "id": "13", "title": "Le Seigneur des Anneaux", "author": "J.R.R. Tolkien", "genre": "Fantasy", "description": "La quête de Frodon.", "imageUrl": "https://covers.openlibrary.org/b/id/8375494-L.jpg" },
-  { "id": "14", "title": "L'Alchimiste", "author": "Paulo Coelho", "genre": "Philosophie", "description": "Suivez votre légende personnelle.", "imageUrl": "https://covers.openlibrary.org/b/id/10521237-L.jpg" },
-  { "id": "15", "title": "Les Robots", "author": "Isaac Asimov", "genre": "Sci-Fi", "description": "Les trois lois de la robotique.", "imageUrl": "https://covers.openlibrary.org/b/id/10582236-L.jpg" },
-  { "id": "16", "title": "Ça", "author": "Stephen King", "genre": "Horreur", "description": "Le clown maléfique de Derry.", "imageUrl": "https://covers.openlibrary.org/b/id/10521264-L.jpg" },
-  { "id": "17", "title": "Crime de l'Orient Express", "author": "Agatha Christie", "genre": "Policier", "description": "Poirot dans le train.", "imageUrl": "https://covers.openlibrary.org/b/id/10521241-L.jpg" },
-  { "id": "18", "title": "Chroniques Martiennes", "author": "Ray Bradbury", "genre": "Sci-Fi", "description": "La vie sur Mars.", "imageUrl": "https://covers.openlibrary.org/b/id/10521247-L.jpg" },
-  { "id": "19", "title": "L'Étranger", "author": "Albert Camus", "genre": "Philosophie", "description": "L'indifférence au monde.", "imageUrl": "https://covers.openlibrary.org/b/id/10521258-L.jpg" },
-  { "id": "20", "title": "Le Meilleur des mondes", "author": "Aldous Huxley", "genre": "Dystopie", "description": "Une société parfaite et glaciale.", "imageUrl": "https://covers.openlibrary.org/b/id/8109319-L.jpg" },
-  { "id": "21", "title": "Histoire de la Terre", "author": "Isaac Asimov", "genre": "Histoire", "description": "L'auteur de Sci-Fi raconte notre passé.", "imageUrl": "https://covers.openlibrary.org/b/id/10521327-L.jpg" },
-  { "id": "22", "title": "Harry Potter 2", "author": "J.K. Rowling", "genre": "Fantasy", "description": "La chambre des secrets.", "imageUrl": "https://covers.openlibrary.org/b/id/10522142-L.jpg" },
-  { "id": "23", "title": "Misery", "author": "Stephen King", "genre": "Horreur", "description": "Une fan trop zélée.", "imageUrl": "https://covers.openlibrary.org/b/id/10521260-L.jpg" },
-  { "id": "24", "title": "La Nuit des temps", "author": "René Barjavel", "genre": "Sci-Fi", "description": "Un couple gelé en Antarctique.", "imageUrl": "https://covers.openlibrary.org/b/id/10521252-L.jpg" },
-  { "id": "25", "title": "Méditations", "author": "Marc Aurèle", "genre": "Philosophie", "description": "Le stoïcisme antique.", "imageUrl": "https://covers.openlibrary.org/b/id/10521306-L.jpg" },
-  { "id": "26", "title": "Mort sur le Nil", "author": "Agatha Christie", "genre": "Policier", "description": "Une croisière sanglante.", "imageUrl": "https://covers.openlibrary.org/b/id/10521251-L.jpg" },
-  { "id": "27", "title": "Ubik", "author": "Philip K. Dick", "genre": "Sci-Fi", "description": "Réalité ou illusion ?", "imageUrl": "https://covers.openlibrary.org/b/id/10521269-L.jpg" },
-  { "id": "28", "title": "La Servante écarlate", "author": "Margaret Atwood", "genre": "Dystopie", "description": "Gilead et ses règles.", "imageUrl": "https://covers.openlibrary.org/b/id/10521268-L.jpg" },
-  { "id": "29", "title": "L'Iliade", "author": "Homère", "genre": "Histoire", "description": "La colère d'Achille.", "imageUrl": "https://covers.openlibrary.org/b/id/10521259-L.jpg" },
-  { "id": "30", "title": "Neuromancien", "author": "William Gibson", "genre": "Sci-Fi", "description": "Le début du Cyberpunk.", "imageUrl": "https://covers.openlibrary.org/b/id/10521243-L.jpg" },
-  { "id": "31", "title": "Dracula", "author": "Bram Stoker", "genre": "Horreur", "description": "Le mythe du vampire.", "imageUrl": "https://covers.openlibrary.org/b/id/10521250-L.jpg" },
-  { "id": "32", "title": "Le Parfum", "author": "Patrick Süskind", "genre": "Classique", "description": "Le nez d'un meurtrier.", "imageUrl": "https://covers.openlibrary.org/b/id/10521280-L.jpg" },
-  { "id": "33", "title": "Solaris", "author": "Stanislas Lem", "genre": "Sci-Fi", "description": "L'océan conscient.", "imageUrl": "https://covers.openlibrary.org/b/id/10521294-L.jpg" },
-  { "id": "34", "title": "La Ferme des animaux", "author": "George Orwell", "genre": "Dystopie", "description": "Une fable sur le pouvoir.", "imageUrl": "https://covers.openlibrary.org/b/id/10521266-L.jpg" },
-  { "id": "35", "title": "Le Hobbit", "author": "J.R.R. Tolkien", "genre": "Fantasy", "description": "Le voyage de Bilbo.", "imageUrl": "https://covers.openlibrary.org/b/id/10521235-L.jpg" },
-  { "id": "36", "title": "Anges et Démons", "author": "Dan Brown", "genre": "Thriller", "description": "Le Vatican menacé.", "imageUrl": "https://covers.openlibrary.org/b/id/10521278-L.jpg" },
-  { "id": "37", "title": "Frankenstein", "author": "Mary Shelley", "genre": "Horreur", "description": "L'homme qui créa la vie.", "imageUrl": "https://covers.openlibrary.org/b/id/10521263-L.jpg" },
-  { "id": "38", "title": "Candide", "author": "Voltaire", "genre": "Philosophie", "description": "Tout est-il pour le mieux ?", "imageUrl": "https://covers.openlibrary.org/b/id/10521320-L.jpg" },
-  { "id": "39", "title": "Hyperion", "author": "Dan Simmons", "genre": "Sci-Fi", "description": "Le pèlerinage galactique.", "imageUrl": "https://covers.openlibrary.org/b/id/10521284-L.jpg" },
-  { "id": "40", "title": "Jane Eyre", "author": "Charlotte Brontë", "genre": "Classique", "description": "Une orpheline face au destin.", "imageUrl": "https://covers.openlibrary.org/b/id/10521298-L.jpg" },
-  { "id": "41", "title": "La machine à explorer le temps", "author": "H.G. Wells", "genre": "Sci-Fi", "description": "Voyage vers le futur.", "imageUrl": "https://covers.openlibrary.org/b/id/10521296-L.jpg" },
-  { "id": "42", "title": "Le Nom de la Rose", "author": "Umberto Eco", "genre": "Policier", "description": "Meurtres dans une abbaye.", "imageUrl": "https://covers.openlibrary.org/b/id/10521274-L.jpg" },
-  { "id": "43", "title": "Homo Deus", "author": "Yuval Noah Harari", "genre": "Histoire", "description": "Le futur de l'humanité.", "imageUrl": "https://covers.openlibrary.org/b/id/10521281-L.jpg" },
-  { "id": "44", "title": "L'Appel de Cthulhu", "author": "H.P. Lovecraft", "genre": "Horreur", "description": "L'horreur cosmique.", "imageUrl": "https://covers.openlibrary.org/b/id/10521301-L.jpg" },
-  { "id": "45", "title": "Millénium", "author": "Stieg Larsson", "genre": "Thriller", "description": "La fille au tatouage.", "imageUrl": "https://covers.openlibrary.org/b/id/10521310-L.jpg" },
-  { "id": "46", "title": "Orgueil et Préjugés", "author": "Jane Austen", "genre": "Classique", "description": "Romance et classes sociales.", "imageUrl": "https://covers.openlibrary.org/b/id/10521300-L.jpg" },
-  { "id": "47", "title": "Blade Runner", "author": "Philip K. Dick", "genre": "Sci-Fi", "description": "Androïdes et humanité.", "imageUrl": "https://covers.openlibrary.org/b/id/10521277-L.jpg" },
-  { "id": "48", "title": "Simetierre", "author": "Stephen King", "genre": "Horreur", "description": "Ne réveillez pas les morts.", "imageUrl": "https://covers.openlibrary.org/b/id/10521289-L.jpg" },
-  { "id": "49", "title": "Da Vinci Code", "author": "Dan Brown", "genre": "Thriller", "description": "Secrets cachés au Louvre.", "imageUrl": "https://covers.openlibrary.org/b/id/10521276-L.jpg" },
-  { "id": "50", "title": "Game of Thrones", "author": "George R.R. Martin", "genre": "Fantasy", "description": "La lutte pour le trône.", "imageUrl": "https://covers.openlibrary.org/b/id/10521270-L.jpg" },
-  { "id": "51", "title": "Une étude en rouge", "author": "Arthur Conan Doyle", "genre": "Policier", "description": "La première enquête de Watson.", "imageUrl": "https://covers.openlibrary.org/b/id/10521239-L.jpg" },
-  { "id": "52", "title": "Harry Potter 3", "author": "J.K. Rowling", "genre": "Fantasy", "description": "Le prisonnier d'Azkaban.", "imageUrl": "https://covers.openlibrary.org/b/id/10522150-L.jpg" },
-  { "id": "53", "title": "La fin de l'éternité", "author": "Isaac Asimov", "genre": "Sci-Fi", "description": "Contrôle du temps.", "imageUrl": "https://covers.openlibrary.org/b/id/10521321-L.jpg" },
-  { "id": "54", "title": "Le Crime est notre affaire", "author": "Agatha Christie", "genre": "Policier", "description": "Enquête classique.", "imageUrl": "https://covers.openlibrary.org/b/id/10521240-L.jpg" },
-  { "id": "55", "title": "Gatsby le Magnifique", "author": "F. Scott Fitzgerald", "genre": "Classique", "description": "Luxe et désespoir.", "imageUrl": "https://covers.openlibrary.org/b/id/10521256-L.jpg" },
-  { "id": "56", "title": "L'Odyssée", "author": "Homère", "genre": "Histoire", "description": "Le retour d'Ulysse.", "imageUrl": "https://covers.openlibrary.org/b/id/10521302-L.jpg" },
-  { "id": "57", "title": "Carrie", "author": "Stephen King", "genre": "Horreur", "description": "Une vengeance sanglante.", "imageUrl": "https://covers.openlibrary.org/b/id/10521309-L.jpg" },
-  { "id": "58", "title": "American Gods", "author": "Neil Gaiman", "genre": "Fantasy", "description": "Anciens contre nouveaux dieux.", "imageUrl": "https://covers.openlibrary.org/b/id/10521272-L.jpg" },
-  { "id": "59", "title": "Ainsi parlait Zarathoustra", "author": "Friedrich Nietzsche", "genre": "Philosophie", "description": "Le surhomme.", "imageUrl": "https://covers.openlibrary.org/b/id/10521304-L.jpg" },
-  { "id": "60", "title": "2001 : l'Odyssée de l'espace", "author": "Arthur C. Clarke", "genre": "Sci-Fi", "description": "Monolithes et IA.", "imageUrl": "https://covers.openlibrary.org/b/id/10521305-L.jpg" },
-  { "id": "61", "title": "Don Quichotte", "author": "Cervantes", "genre": "Classique", "description": "Moulins et chevalerie.", "imageUrl": "https://covers.openlibrary.org/b/id/10521293-L.jpg" },
-  { "id": "62", "title": "Le Silence des agneaux", "author": "Thomas Harris", "genre": "Thriller", "description": "Hannibal Lecter.", "imageUrl": "https://covers.openlibrary.org/b/id/10521308-L.jpg" },
-  { "id": "63", "title": "L'Homme illustré", "author": "Ray Bradbury", "genre": "Sci-Fi", "description": "Tatouages prophétiques.", "imageUrl": "https://covers.openlibrary.org/b/id/10521297-L.jpg" },
-  { "id": "64", "title": "Harry Potter 4", "author": "J.K. Rowling", "genre": "Fantasy", "description": "La coupe de feu.", "imageUrl": "https://covers.openlibrary.org/b/id/10522155-L.jpg" },
-  { "id": "65", "title": "Seconde Fondation", "author": "Isaac Asimov", "genre": "Sci-Fi", "description": "La colonie cachée.", "imageUrl": "https://covers.openlibrary.org/b/id/10521256-L.jpg" },
-  { "id": "66", "title": "Cujo", "author": "Stephen King", "genre": "Horreur", "description": "Un chien enragé.", "imageUrl": "https://covers.openlibrary.org/b/id/10521283-L.jpg" },
-  { "id": "67", "title": "La République", "author": "Platon", "genre": "Philosophie", "description": "La cité idéale.", "imageUrl": "https://covers.openlibrary.org/b/id/10521303-L.jpg" },
-  { "id": "68", "title": "Le Meurtre de Roger Ackroyd", "author": "Agatha Christie", "genre": "Policier", "description": "Un twist légendaire.", "imageUrl": "https://covers.openlibrary.org/b/id/10521242-L.jpg" },
-  { "id": "69", "title": "Les Piliers de la Terre", "author": "Ken Follett", "genre": "Histoire", "description": "Bâtir une cathédrale.", "imageUrl": "https://covers.openlibrary.org/b/id/10521312-L.jpg" },
-  { "id": "70", "title": "La Guerre des mondes", "author": "H.G. Wells", "genre": "Sci-Fi", "description": "Invasion martienne.", "imageUrl": "https://covers.openlibrary.org/b/id/10521287-L.jpg" },
-  { "id": "71", "title": "Nous", "author": "Ievgueni Zamiatine", "genre": "Dystopie", "description": "L'ancêtre de 1984.", "imageUrl": "https://covers.openlibrary.org/b/id/10521261-L.jpg" },
-  { "id": "72", "title": "Le Château", "author": "Franz Kafka", "genre": "Philosophie", "description": "Bureaucratie absurde.", "imageUrl": "https://covers.openlibrary.org/b/id/10521324-L.jpg" },
-  { "id": "73", "title": "Ring", "author": "Koji Suzuki", "genre": "Horreur", "description": "Une cassette maudite.", "imageUrl": "https://covers.openlibrary.org/b/id/10521319-L.jpg" },
-  { "id": "74", "title": "Harry Potter 5", "author": "J.K. Rowling", "genre": "Fantasy", "description": "L'Ordre du Phénix.", "imageUrl": "https://covers.openlibrary.org/b/id/10522160-L.jpg" },
-  { "id": "75", "title": "Fondation et Empire", "author": "Isaac Asimov", "genre": "Sci-Fi", "description": "Le Mulet.", "imageUrl": "https://covers.openlibrary.org/b/id/10521253-L.jpg" },
-  { "id": "76", "title": "Le Silmarillion", "author": "J.R.R. Tolkien", "genre": "Fantasy", "description": "Mythologie d'Arda.", "imageUrl": "https://covers.openlibrary.org/b/id/10521286-L.jpg" },
-  { "id": "77", "title": "Christine", "author": "Stephen King", "genre": "Horreur", "description": "Une voiture possédée.", "imageUrl": "https://covers.openlibrary.org/b/id/10521290-L.jpg" },
-  { "id": "78", "title": "Arsène Lupin", "author": "Maurice Leblanc", "genre": "Policier", "description": "Gentleman cambrioleur.", "imageUrl": "https://covers.openlibrary.org/b/id/10521292-L.jpg" },
-  { "id": "79", "title": "Ubik Revisited", "author": "Philip K. Dick", "genre": "Sci-Fi", "description": "Second voyage mental.", "imageUrl": "https://covers.openlibrary.org/b/id/10521269-L.jpg" },
-  { "id": "80", "title": "Le Procès", "author": "Franz Kafka", "genre": "Philosophie", "description": "Jugé sans crime.", "imageUrl": "https://covers.openlibrary.org/b/id/10521314-L.jpg" },
-  { "id": "81", "title": "Inferno", "author": "Dan Brown", "genre": "Thriller", "description": "Dante et virus.", "imageUrl": "https://covers.openlibrary.org/b/id/10521255-L.jpg" },
-  { "id": "82", "title": "Anna Karénine", "author": "Léon Tolstoï", "genre": "Classique", "description": "Passion tragique.", "imageUrl": "https://covers.openlibrary.org/b/id/10521271-L.jpg" },
-  { "id": "83", "title": "La Trilogie de Mars", "author": "Kim Robinson", "genre": "Sci-Fi", "description": "Terraformer Mars.", "imageUrl": "https://covers.openlibrary.org/b/id/10521282-L.jpg" },
-  { "id": "84", "title": "Harry Potter 6", "author": "J.K. Rowling", "genre": "Fantasy", "description": "Le prince de sang-mêlé.", "imageUrl": "https://covers.openlibrary.org/b/id/10522165-L.jpg" },
-  { "id": "85", "title": "Le Fléau", "author": "Stephen King", "genre": "Horreur", "description": "Fin du monde virale.", "imageUrl": "https://covers.openlibrary.org/b/id/10521257-L.jpg" },
-  { "id": "86", "title": "Un lien de sang", "author": "Agatha Christie", "genre": "Policier", "description": "Vengeance froide.", "imageUrl": "https://covers.openlibrary.org/b/id/10521291-L.jpg" },
-  { "id": "87", "title": "L'Origine des espèces", "author": "Charles Darwin", "genre": "Histoire", "description": "L'évolution.", "imageUrl": "https://covers.openlibrary.org/b/id/10521288-L.jpg" },
-  { "id": "88", "title": "Solaris II", "author": "Stanislas Lem", "genre": "Sci-Fi", "description": "Retour sur la planète.", "imageUrl": "https://covers.openlibrary.org/b/id/10521294-L.jpg" },
-  { "id": "89", "title": "Le Procès de Socrate", "author": "Platon", "genre": "Philosophie", "description": "Défendre la vérité.", "imageUrl": "https://covers.openlibrary.org/b/id/10521322-L.jpg" },
-  { "id": "90", "title": "Harry Potter 7", "author": "J.K. Rowling", "genre": "Fantasy", "description": "Les reliques de la mort.", "imageUrl": "https://covers.openlibrary.org/b/id/10522170-L.jpg" },
-  { "id": "91", "title": "Fondation et Terre", "author": "Isaac Asimov", "genre": "Sci-Fi", "description": "Dernier tome.", "imageUrl": "https://covers.openlibrary.org/b/id/10521316-L.jpg" },
-  { "id": "92", "title": "Joyland", "author": "Stephen King", "genre": "Policier", "description": "Mystère dans un parc.", "imageUrl": "https://covers.openlibrary.org/b/id/10521323-L.jpg" },
-  { "id": "93", "title": "Les Misérables", "author": "Victor Hugo", "genre": "Classique", "description": "Rédemption de Jean Valjean.", "imageUrl": "https://covers.openlibrary.org/b/id/10521307-L.jpg" },
-  { "id": "94", "title": "La servante écarlate", "author": "Margaret Atwood", "genre": "Dystopie", "description": "Oppression.", "imageUrl": "https://covers.openlibrary.org/b/id/10521268-L.jpg" },
-  { "id": "95", "title": "Meurtre en Mésopotamie", "author": "Agatha Christie", "genre": "Policier", "description": "Fouilles sanglantes.", "imageUrl": "https://covers.openlibrary.org/b/id/10521299-L.jpg" },
-  { "id": "96", "title": "2010 : Odyssée deux", "author": "Arthur C. Clarke", "genre": "Sci-Fi", "description": "Suite spatiale.", "imageUrl": "https://covers.openlibrary.org/b/id/10521324-L.jpg" },
-  { "id": "97", "title": "L'Enfer", "author": "Dante", "genre": "Classique", "description": "Les cercles de l'enfer.", "imageUrl": "https://covers.openlibrary.org/b/id/10521325-L.jpg" },
-  { "id": "98", "title": "L'Histoire romaine", "author": "Isaac Asimov", "genre": "Histoire", "description": "L'empire raconté.", "imageUrl": "https://covers.openlibrary.org/b/id/10521326-L.jpg" },
-  { "id": "99", "title": "L'Appel de la forêt", "author": "Jack London", "genre": "Classique", "description": "Survie sauvage.", "imageUrl": "https://covers.openlibrary.org/b/id/10521327-L.jpg" },
-  { "id": "100", "title": "Le Dernier Homme", "author": "Mary Shelley", "genre": "Sci-Fi", "description": "Épidémie mondiale.", "imageUrl": "https://covers.openlibrary.org/b/id/10521328-L.jpg" }
+  {
+    "id": "1",
+    "title": "Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Science-Fiction",
+    "description": "Dans les ruines de l'Amérique du Nord se trouve Panem, une nation où le Capitole cruel oblige chaque district à envoyer un garçon et une fille pour participer aux Hunger Games annuels, un combat télévisé à mort. Katniss Everdeen, 16 ans, se porte volontaire pour sauver sa jeune sœur et doit utiliser son intelligence et ses talents d'archère pour survivre dans cette arène impitoyable.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722975l/2767052.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Harry Potter et l'Ordre du Phénix",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Harry retourne à Poudlard pour sa cinquième année alors que le Ministère de la Magie refuse de croire au retour de Voldemort. Face à la tyrannique Dolores Ombrage qui prend le contrôle de l'école, Harry crée l'Armée de Dumbledore en secret pour enseigner la défense contre les forces du Mal à ses camarades.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546910265l/2.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Ne tirez pas sur l'oiseau moqueur",
+    "author": "Harper Lee",
+    "genre": "Classique",
+    "description": "Dans l'Alabama des années 1930, la jeune Scout Finch observe son père Atticus, avocat intègre, défendre un homme noir injustement accusé de viol. Ce roman poignant, lauréat du Prix Pulitzer, explore l'innocence de l'enfance confrontée aux préjugés raciaux et à l'injustice du Sud américain.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553383690l/2657.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Orgueil et Préjugés",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "description": "Dans l'Angleterre du XIXe siècle, Elizabeth Bennet et Mr. Darcy se rencontrent lors d'un bal. Malgré leurs premières impressions négatives — l'orgueil de l'un et les préjugés de l'autre — ils découvrent peu à peu leurs véritables sentiments dans cette comédie de mœurs brillante et intemporelle.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399351l/1885.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Fascination",
+    "author": "Stephenie Meyer",
+    "genre": "Fantasy",
+    "description": "Bella Swan emménage à Forks, petite ville pluvieuse de l'État de Washington, où elle rencontre le mystérieux et séduisant Edward Cullen. Elle découvre bientôt qu'il est un vampire qui lutte contre sa nature pour être avec elle. Une histoire d'amour impossible entre une mortelle et un immortel.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361039443l/41865.jpg"
+  },
+  {
+    "id": "6",
+    "title": "La Voleuse de livres",
+    "author": "Markus Zusak",
+    "genre": "Histoire",
+    "description": "En 1939, dans l'Allemagne nazie, Liesel Meminger vit avec ses parents adoptifs. Elle apprend à lire et commence à voler des livres aux autodafés nazis, trouvant refuge dans les mots. Narré par la Mort elle-même, ce roman bouleversant raconte comment la littérature peut illuminer les heures les plus sombres.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522157426l/19063._SY475_.jpg"
+  },
+  {
+    "id": "7",
+    "title": "La Ferme des animaux",
+    "author": "George Orwell",
+    "genre": "Classique",
+    "description": "Les animaux d'une ferme anglaise se révoltent contre leur propriétaire humain et créent leur propre société égalitaire sous le slogan « Tous les animaux sont égaux ». Mais les cochons prennent le pouvoir et instaurent une dictature aussi oppressive que celle des humains. Une fable satirique brillante sur le totalitarisme.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1325861570l/170448.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Le Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Bilbo Sacquet, un hobbit paisible qui n'aime rien tant que son confort, est entraîné par le magicien Gandalf dans une quête épique avec une compagnie de treize nains. Leur mission : récupérer le trésor gardé par le terrible dragon Smaug sous la Montagne Solitaire.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546071216l/5907.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Le Petit Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "genre": "Classique",
+    "description": "Un aviateur échoué dans le désert du Sahara rencontre un mystérieux petit garçon venu d'un astéroïde. À travers leurs conversations poétiques, le Petit Prince partage les leçons apprises lors de son voyage à travers différentes planètes, révélant que l'essentiel est invisible pour les yeux.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1367545443l/157993.jpg"
+  },
+  {
+    "id": "10",
+    "title": "Harry Potter et les Reliques de la Mort",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Dans ce dernier tome de la saga, Harry, Ron et Hermione abandonnent Poudlard pour partir en quête des Horcruxes, les objets contenant des fragments de l'âme de Voldemort. La bataille finale pour le monde des sorciers approche et tous devront faire des sacrifices.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474171184l/136251._SY475_.jpg"
+  },
+  {
+    "id": "11",
+    "title": "Nos étoiles contraires",
+    "author": "John Green",
+    "genre": "Romance",
+    "description": "Hazel Grace Lancaster, 16 ans, est atteinte d'un cancer des poumons. Dans un groupe de soutien, elle rencontre Augustus Waters, en rémission d'un ostéosarcome. Ensemble, ils vivent une histoire d'amour intense et voyagent à Amsterdam pour rencontrer leur auteur préféré. Un roman bouleversant sur l'amour face à la mort.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360206420l/11870085.jpg"
+  },
+  {
+    "id": "12",
+    "title": "Le Guide du voyageur galactique",
+    "author": "Douglas Adams",
+    "genre": "Science-Fiction",
+    "description": "Quand la Terre est détruite pour construire une voie express hyperspatiale, Arthur Dent est sauvé in extremis par son ami Ford Prefect, qui se révèle être un extraterrestre. Commence alors un voyage absurde et hilarant à travers la galaxie, armé du seul Guide du voyageur galactique et d'une serviette.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559986152l/386162.jpg"
+  },
+  {
+    "id": "13",
+    "title": "L'Arbre généreux",
+    "author": "Shel Silverstein",
+    "genre": "Classique",
+    "description": "Un arbre aime un petit garçon de tout son cœur. Au fil des années, il lui donne tout ce qu'il possède : ses pommes, ses branches, son tronc, jusqu'à n'être plus qu'une souche. Une parabole touchante et universelle sur l'amour inconditionnel, le don de soi et la nature humaine.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1174210942l/370493._SX318_.jpg"
+  },
+  {
+    "id": "14",
+    "title": "Les Hauts de Hurlevent",
+    "author": "Emily Brontë",
+    "genre": "Classique",
+    "description": "Dans les landes sauvages du Yorkshire, Heathcliff, orphelin recueilli, et Catherine Earnshaw vivent une passion dévorante qui transcende la mort. Leur amour impossible, marqué par la vengeance et l'obsession, détruit tout sur son passage dans ce chef-d'œuvre gothique de la littérature anglaise.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587655304l/6185._SY475_.jpg"
+  },
+  {
+    "id": "15",
+    "title": "Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Thriller",
+    "description": "Le conservateur du Louvre est assassiné, laissant des indices cryptiques sur son corps. Robert Langdon, professeur de symbologie à Harvard, et Sophie Neveu, cryptologue, découvrent une piste de secrets cachés dans les œuvres de Léonard de Vinci, menant au plus grand mystère de l'histoire : le Saint Graal.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579621267l/968.jpg"
+  },
+  {
+    "id": "16",
+    "title": "Geisha",
+    "author": "Arthur Golden",
+    "genre": "Romance",
+    "description": "Sayuri raconte sa vie extraordinaire de geisha à Kyoto, depuis son enfance pauvre dans un village de pêcheurs jusqu'aux sommets du monde des fleurs et des saules. Elle dévoile sa formation rigoureuse, ses rivalités féroces et son amour impossible pour le Président, dans le Japon d'avant et après-guerre.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409595968l/929.jpg"
+  },
+  {
+    "id": "17",
+    "title": "Le Portrait de Dorian Gray",
+    "author": "Oscar Wilde",
+    "genre": "Horreur",
+    "description": "Le beau Dorian Gray fait le vœu de rester éternellement jeune tandis que son portrait vieillirait à sa place. Libéré des conséquences visibles de ses actes, il s'abandonne à une vie de débauche. Mais le tableau, caché dans son grenier, reflète chaque péché, chaque cruauté. Une méditation fascinante sur la beauté et la corruption morale.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546103428l/5297.jpg"
+  },
+  {
+    "id": "18",
+    "title": "Alice au pays des merveilles",
+    "author": "Lewis Carroll",
+    "genre": "Fantasy",
+    "description": "Alice suit un Lapin Blanc pressé dans son terrier et tombe dans un monde absurde où rien n'obéit à la logique. Elle y rencontre le Chat du Cheshire au sourire énigmatique, le Chapelier Fou et sa partie de thé éternelle, et la tyrannique Reine de Cœur. Un voyage surréaliste et poétique dans l'imaginaire.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327872220l/24213.jpg"
+  },
+  {
+    "id": "19",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": "Romance",
+    "description": "Jane Eyre, orpheline maltraitée devenue gouvernante, est engagée à Thornfield Hall par le sombre et mystérieux Mr. Rochester. Entre eux naît un amour profond, mais le manoir cache un terrible secret. Un roman révolutionnaire sur l'indépendance féminine, la passion et la quête de dignité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1557343311l/10210.jpg"
+  },
+  {
+    "id": "20",
+    "title": "Divergente",
+    "author": "Veronica Roth",
+    "genre": "Science-Fiction",
+    "description": "Dans un Chicago futuriste, la société est divisée en cinq factions basées sur les vertus. À 16 ans, Beatrice Prior doit choisir sa faction pour la vie. Mais son test révèle qu'elle est Divergente — elle n'appartient à aucune catégorie. Un secret dangereux dans un monde qui ne tolère pas la différence.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1588455221l/13335037._SY475_.jpg"
+  },
+  {
+    "id": "21",
+    "title": "Sa Majesté des Mouches",
+    "author": "William Golding",
+    "genre": "Classique",
+    "description": "Après un crash d'avion, un groupe d'écoliers britanniques se retrouve seul sur une île déserte. Sans adultes, leur tentative de créer une société civilisée dégénère rapidement en chaos et violence tribale. Une réflexion sombre et puissante sur la fragilité de la civilisation et la nature humaine.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327869409l/7624.jpg"
+  },
+  {
+    "id": "22",
+    "title": "Roméo et Juliette",
+    "author": "William Shakespeare",
+    "genre": "Classique",
+    "description": "À Vérone, deux familles, les Montaigu et les Capulet, se vouent une haine ancestrale. Lors d'un bal masqué, Roméo et Juliette tombent éperdument amoureux, ignorant qu'ils appartiennent aux clans ennemis. Leur passion fulgurante ne peut se terminer que dans la tragédie. La plus célèbre histoire d'amour jamais écrite.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572098085l/18135._SY475_.jpg"
+  },
+  {
+    "id": "23",
+    "title": "L'Alchimiste",
+    "author": "Paulo Coelho",
+    "genre": "Aventure",
+    "description": "Santiago, un jeune berger andalou, rêve d'un trésor caché près des pyramides d'Égypte. Il abandonne son troupeau pour traverser le désert du Sahara, rencontrant sur sa route un roi, un alchimiste et l'amour de sa vie. Un conte initiatique sur l'importance d'écouter son cœur et de poursuivre sa Légende Personnelle.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1466865542l/18144590._SY475_.jpg"
+  },
+  {
+    "id": "24",
+    "title": "Crime et Châtiment",
+    "author": "Fiodor Dostoïevski",
+    "genre": "Classique",
+    "description": "Raskolnikov, ancien étudiant pauvre de Saint-Pétersbourg, assassine une vieille usurière, convaincu que les hommes supérieurs sont au-dessus des lois morales. Torturé par la culpabilité, il joue un dangereux jeu du chat et de la souris avec l'inspecteur Porfiri. Seule Sonia, une prostituée au cœur pur, peut lui offrir la rédemption.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1382846449l/7144.jpg"
+  },
+  {
+    "id": "25",
+    "title": "Le Monde de Charlie",
+    "author": "Stephen Chbosky",
+    "genre": "Romance",
+    "description": "Charlie, adolescent introverti et sensible, entre au lycée après une période difficile. À travers des lettres à un ami anonyme, il raconte sa première année : ses amitiés avec Patrick et Sam, ses découvertes musicales et littéraires, ses premiers amours et les secrets de son passé. Un récit touchant sur l'adolescence.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1520093244l/22628.jpg"
+  },
+  {
+    "id": "26",
+    "title": "Gatsby le Magnifique",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classique",
+    "description": "Dans l'Amérique des années folles, le mystérieux Jay Gatsby organise des fêtes somptueuses dans son manoir de Long Island, espérant reconquérir Daisy Buchanan, son amour perdu. Nick Carraway, son voisin et narrateur, assiste à cette quête obsessionnelle du rêve américain et à sa destruction tragique.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1490528560l/4671._SY475_.jpg"
+  },
+  {
+    "id": "27",
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Science-Fiction",
+    "description": "Dans un futur totalitaire, Winston Smith travaille au Ministère de la Vérité où il réécrit l'histoire selon les besoins du Parti. Big Brother surveille tout. La pensée est un crime. Quand Winston commence à douter et tombe amoureux de Julia, il s'engage sur un chemin dangereux vers la rébellion. Le roman dystopique le plus influent jamais écrit.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1532714506l/40961427._SX318_.jpg"
+  },
+  {
+    "id": "28",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Horreur",
+    "description": "Victor Frankenstein, jeune scientifique ambitieux, crée un être vivant à partir de cadavres. Horrifié par sa créature, il l'abandonne. Le monstre, intelligent mais rejeté par tous, cherche désespérément l'amour avant de se tourner vers la vengeance. Le premier roman de science-fiction, une réflexion sur la responsabilité scientifique et ce qui fait notre humanité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1631088473l/35031085._SY475_.jpg"
+  },
+  {
+    "id": "29",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "genre": "Horreur",
+    "description": "Jonathan Harker, jeune notaire anglais, se rend en Transylvanie pour rencontrer le comte Dracula. Il découvre avec horreur que son hôte est un vampire. Bientôt, Dracula arrive en Angleterre et jette son dévolu sur Mina et Lucy. Le professeur Van Helsing rassemble un groupe pour traquer le monstre. Le roman fondateur du mythe vampirique.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387151694l/17245.jpg"
+  },
+  {
+    "id": "30",
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "genre": "Classique",
+    "description": "Jean Valjean, ancien forçat condamné pour avoir volé du pain, tente de refaire sa vie après sa libération. Poursuivi sans relâche par l'inspecteur Javert, il devient le protecteur de Cosette, fille de la malheureuse Fantine. Une fresque épique sur la justice, la rédemption et l'amour dans la France du XIXe siècle.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1411852091l/24280.jpg"
+  },
+  {
+    "id": "31",
+    "title": "Le Comte de Monte-Cristo",
+    "author": "Alexandre Dumas",
+    "genre": "Aventure",
+    "description": "Edmond Dantès, jeune marin promis à un brillant avenir, est trahi par ceux qu'il croyait ses amis et emprisonné au Château d'If. Après quatorze ans, il s'évade et découvre un trésor fabuleux. Devenu le Comte de Monte-Cristo, il orchestre une vengeance impitoyable contre ses ennemis. Le plus grand roman d'aventures jamais écrit.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611834134l/7126._SY475_.jpg"
+  },
+  {
+    "id": "32",
+    "title": "L'Attrape-cœurs",
+    "author": "J.D. Salinger",
+    "genre": "Classique",
+    "description": "Holden Caulfield, 17 ans, vient d'être renvoyé de son école privée. Avant de rentrer chez lui, il erre pendant trois jours dans New York, rencontrant des inconnus et réfléchissant à l'hypocrisie des adultes. Il rêve d'être « l'attrape-cœurs », celui qui empêche les enfants de tomber dans le monde corrompu des grandes personnes.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398034300l/5107.jpg"
+  },
+  {
+    "id": "33",
+    "title": "Des souris et des hommes",
+    "author": "John Steinbeck",
+    "genre": "Classique",
+    "description": "George et Lennie, deux travailleurs migrants pendant la Grande Dépression, parcourent la Californie en rêvant de posséder leur propre ferme. George est vif et protecteur ; Lennie est un géant au cœur d'enfant qui ne connaît pas sa force. Leur amitié sera mise à l'épreuve de la manière la plus tragique.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1511302904l/890._SX318_.jpg"
+  },
+  {
+    "id": "34",
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "genre": "Science-Fiction",
+    "description": "Dans un futur où les livres sont interdits, Montag est pompier — son travail consiste à les brûler. 451 degrés Fahrenheit : la température à laquelle le papier s'enflamme. Sa rencontre avec Clarisse, une jeune fille qui pose des questions, éveille ses doutes. Il commence à cacher des livres et découvre leur pouvoir subversif.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1383718290l/13079982.jpg"
+  },
+  {
+    "id": "35",
+    "title": "Le Meilleur des mondes",
+    "author": "Aldous Huxley",
+    "genre": "Science-Fiction",
+    "description": "Dans un futur où les humains sont créés en laboratoire et conditionnés pour le bonheur, personne ne souffre, personne ne vieillit, personne ne questionne. Bernard Marx, un Alpha Plus mal ajusté, et John le Sauvage, élevé dans une réserve, remettent en question cette utopie. Mais le bonheur artificiel a-t-il un prix ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1575509280l/5129._SY475_.jpg"
+  },
+  {
+    "id": "36",
+    "title": "Les Aventures de Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "genre": "Policier",
+    "description": "Dans le Londres victorien, Sherlock Holmes résout les mystères les plus complexes depuis son appartement du 221B Baker Street. Avec son intelligence exceptionnelle, son sens de l'observation et sa méthode déductive, aucune énigme ne lui résiste. Son ami le Dr. Watson raconte leurs aventures les plus célèbres.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1164045516l/3590.jpg"
+  },
+  {
+    "id": "37",
+    "title": "Dix petits nègres",
+    "author": "Agatha Christie",
+    "genre": "Policier",
+    "description": "Dix inconnus sont invités sur une île isolée par un mystérieux hôte absent. Accusés chacun d'un meurtre impuni par une voix enregistrée, ils commencent à mourir un par un, selon les paroles d'une comptine macabre. Coupés du monde, les survivants réalisent que l'assassin est parmi eux. Le roman policier le plus vendu de tous les temps.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1638425885l/16299._SY475_.jpg"
+  },
+  {
+    "id": "38",
+    "title": "Le Crime de l'Orient-Express",
+    "author": "Agatha Christie",
+    "genre": "Policier",
+    "description": "Hercule Poirot voyage dans le luxueux Orient-Express quand le train est bloqué par la neige en Yougoslavie. Au matin, on découvre un passager assassiné de douze coups de couteau. Tous les voyageurs ont un alibi, mais aussi un secret. Poirot devra démêler un écheveau de mensonges pour découvrir la vérité la plus inattendue.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1486131451l/853510._SY475_.jpg"
+  },
+  {
+    "id": "39",
+    "title": "Rebecca",
+    "author": "Daphne du Maurier",
+    "genre": "Thriller",
+    "description": "« Hier soir, j'ai rêvé que je retournais à Manderley. » Une jeune femme timide épouse le riche veuf Maxim de Winter et s'installe dans son somptueux domaine de Manderley. Mais l'ombre de Rebecca, la première épouse décédée, plane partout, entretenue par la sinistre gouvernante Mrs. Danvers. Un thriller gothique envoûtant.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386605169l/17899948.jpg"
+  },
+  {
+    "id": "40",
+    "title": "Shining",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Jack Torrance, écrivain en panne d'inspiration et alcoolique repenti, accepte un poste de gardien d'hiver à l'hôtel Overlook, isolé dans les montagnes du Colorado. Avec sa femme Wendy et son fils Danny, doté de pouvoirs psychiques, il s'installe dans cet immense bâtiment vide. Mais l'hôtel a ses propres plans pour eux.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg"
+  },
+  {
+    "id": "41",
+    "title": "Ça",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "À Derry, Maine, les enfants disparaissent. Ça prend la forme de Grippe-Sou le clown pour attirer ses victimes, mais c'est une entité bien plus ancienne et terrifiante. Sept enfants marginaux, le Club des Ratés, affrontent leurs peurs pour combattre le monstre. Vingt-sept ans plus tard, Ça se réveille et ils doivent tenir leur promesse.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1334416842l/830502.jpg"
+  },
+  {
+    "id": "42",
+    "title": "Carrie",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Carrie White, adolescente timide et souffre-douleur de son lycée, vit sous la coupe d'une mère fanatique religieuse. Elle découvre qu'elle possède des pouvoirs télékinétiques. Quand une humiliation de trop survient lors du bal de promo, sa rage se déchaîne avec des conséquences apocalyptiques. Le premier roman de Stephen King.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1166254258l/10592.jpg"
+  },
+  {
+    "id": "43",
+    "title": "Misery",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "L'écrivain à succès Paul Sheldon a un grave accident de voiture dans une tempête de neige. Il est sauvé par Annie Wilkes, une ancienne infirmière qui se révèle être sa plus grande fan. Quand elle découvre qu'il a tué son personnage préféré, Misery Chastain, elle le séquestre et le force à écrire un nouveau roman. Sous la torture.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606254209l/10614.jpg"
+  },
+  {
+    "id": "44",
+    "title": "Le Seigneur des Anneaux : La Communauté de l'Anneau",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Frodon Sacquet hérite de l'Anneau Unique de son oncle Bilbo, un artefact maléfique forgé par le Seigneur des Ténèbres Sauron. Pour sauver la Terre du Milieu, il doit le détruire dans les flammes de la Montagne du Destin, au cœur du Mordor. Avec la Communauté de l'Anneau, il entreprend ce voyage impossible.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1566425108l/33._SY475_.jpg"
+  },
+  {
+    "id": "45",
+    "title": "Le Seigneur des Anneaux : Les Deux Tours",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "La Communauté de l'Anneau est brisée. Frodon et Sam continuent seuls vers le Mordor, guidés par la créature Gollum, ancienne victime de l'Anneau. Pendant ce temps, Aragorn, Legolas et Gimli poursuivent les Orques qui ont capturé Merry et Pippin. La guerre de l'Anneau embrase la Terre du Milieu.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546215656l/15241.jpg"
+  },
+  {
+    "id": "46",
+    "title": "Le Seigneur des Anneaux : Le Retour du Roi",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Le destin de la Terre du Milieu se joue. Tandis que Frodon et Sam approchent de la Montagne du Destin, épuisés et tourmentés par Gollum, Aragorn révèle son héritage et mène les armées de l'Ouest contre Sauron. La bataille finale pour la survie du monde libre a commencé.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1654216226l/61215384._SY475_.jpg"
+  },
+  {
+    "id": "47",
+    "title": "Le Trône de fer",
+    "author": "George R.R. Martin",
+    "genre": "Fantasy",
+    "description": "Quand Jon Arryn, Main du Roi, meurt dans des circonstances suspectes, le roi Robert Baratheon convoque son vieil ami Eddard Stark pour le remplacer. À Port-Réal, Ned découvre des secrets mortels. Au-delà du Mur, les Marcheurs Blancs se réveillent. Et de l'autre côté de la mer, Daenerys Targaryen rêve de dragons.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562726234l/13496._SY475_.jpg"
+  },
+  {
+    "id": "48",
+    "title": "L'Épreuve : Le Labyrinthe",
+    "author": "James Dashner",
+    "genre": "Science-Fiction",
+    "description": "Thomas se réveille dans un ascenseur sans aucun souvenir, sauf son prénom. Il découvre le Bloc, une communauté de garçons entourée d'un gigantesque labyrinthe dont les murs se déplacent chaque nuit, peuplé de créatures mortelles appelées Griffeurs. Pourquoi sont-ils là ? Qui les a mis là ? Thomas doit trouver la sortie.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1375596592l/6186357.jpg"
+  },
+  {
+    "id": "49",
+    "title": "La Stratégie Ender",
+    "author": "Orson Scott Card",
+    "genre": "Science-Fiction",
+    "description": "Ender Wiggin a six ans quand il est recruté par l'armée spatiale internationale. L'humanité a survécu de justesse à deux invasions des Doryphores et prépare la riposte. À l'École de Guerre, Ender devient le plus brillant stratège jamais formé. Mais quel est le vrai prix de la victoire ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802.jpg"
+  },
+  {
+    "id": "50",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genre": "Science-Fiction",
+    "description": "Sur Arrakis, planète désertique seule source de l'Épice qui permet le voyage spatial, la famille Atréides prend le contrôle au détriment des Harkonnen. Mais un piège mortel les attend. Paul, l'héritier, trouve refuge parmi les Fremen, le peuple du désert. Il deviendra leur messie : Muad'Dib. La plus grande saga de science-fiction.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1555447414l/44767458.jpg"
+  },
+  {
+    "id": "51",
+    "title": "Fondation",
+    "author": "Isaac Asimov",
+    "genre": "Science-Fiction",
+    "description": "Hari Seldon, mathématicien de génie, a développé la psychohistoire, science permettant de prédire l'avenir des masses. Il annonce la chute imminente de l'Empire Galactique et trente mille ans de barbarie. Pour réduire cette période à un millénaire, il crée la Fondation aux confins de la galaxie. Le début d'une saga monumentale.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1417900846l/29579.jpg"
+  },
+  {
+    "id": "52",
+    "title": "Le Passeur",
+    "author": "Lois Lowry",
+    "genre": "Science-Fiction",
+    "description": "Jonas vit dans une communauté où la douleur, les choix et les couleurs n'existent plus. À douze ans, il est désigné pour devenir le nouveau Dépositaire de la Mémoire. Le vieux Passeur lui transmet les souvenirs de l'humanité — la joie, la souffrance, l'amour. Jonas découvre ce que sa société a sacrifié pour la « perfection ».",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1342493368l/3636.jpg"
+  },
+  {
+    "id": "53",
+    "title": "La Servante écarlate",
+    "author": "Margaret Atwood",
+    "genre": "Science-Fiction",
+    "description": "Dans la République de Gilead, théocratie totalitaire née sur les ruines des États-Unis, les femmes fertiles sont réduites en esclavage comme Servantes. Defred est assignée au Commandant Fred et doit lui donner un enfant. Elle se souvient de sa vie d'avant — son mari, sa fille — et rêve de liberté.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578028274l/38447._SY475_.jpg"
+  },
+  {
+    "id": "54",
+    "title": "La Route",
+    "author": "Cormac McCarthy",
+    "genre": "Science-Fiction",
+    "description": "Dans un monde dévasté et gris, couvert de cendres, un père et son fils marchent vers le sud en poussant un caddie contenant leurs maigres possessions. Ils évitent les bandes de cannibales et luttent contre le froid et la faim. Leur seul objectif : rester en vie et « porter le feu ». Prix Pulitzer 2007.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439197219l/6288._SY475_.jpg"
+  },
+  {
+    "id": "55",
+    "title": "L'Histoire de Pi",
+    "author": "Yann Martel",
+    "genre": "Aventure",
+    "description": "Piscine Molitor Patel, dit Pi, survit au naufrage du cargo transportant le zoo de sa famille de l'Inde vers le Canada. Il se retrouve sur un canot de sauvetage avec un tigre du Bengale nommé Richard Parker. Pendant 227 jours, l'adolescent et le fauve dérivent sur l'océan Pacifique. Une histoire de foi, de survie et de vérité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1631251689l/4214._SY475_.jpg"
+  },
+  {
+    "id": "56",
+    "title": "Les Cerfs-volants de Kaboul",
+    "author": "Khaled Hosseini",
+    "genre": "Classique",
+    "description": "À Kaboul, Amir et Hassan sont inséparables malgré leurs différences sociales. Lors d'un concours de cerfs-volants, Amir commet une trahison qui le hantera toute sa vie. Des années plus tard, réfugié aux États-Unis, il reçoit un appel : « Il y a un moyen de te racheter. » Il doit retourner dans l'Afghanistan des Talibans.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1579036753l/77203._SY475_.jpg"
+  },
+  {
+    "id": "57",
+    "title": "Mille soleils splendides",
+    "author": "Khaled Hosseini",
+    "genre": "Classique",
+    "description": "Mariam, fille illégitime rejetée par son père, et Laila, orpheline de guerre, sont forcées d'épouser le même homme violent à Kaboul. Dans l'Afghanistan déchiré par les conflits, des Soviétiques aux Talibans, ces deux femmes de générations différentes tissent une amitié improbable qui devient leur force face à l'oppression.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1345958969l/128029.jpg"
+  },
+  {
+    "id": "58",
+    "title": "Les Hommes qui n'aimaient pas les femmes",
+    "author": "Stieg Larsson",
+    "genre": "Thriller",
+    "description": "Le journaliste Mikael Blomkvist, condamné pour diffamation, est engagé par un industriel pour élucider la disparition de sa nièce Harriet il y a 40 ans. Il fait équipe avec Lisbeth Salander, hackeuse géniale au passé traumatisant. Ensemble, ils découvrent les sombres secrets d'une famille suédoise. Premier tome de la trilogie Millénium.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327868566l/2429135.jpg"
+  },
+  {
+    "id": "59",
+    "title": "La Fille qui jouait avec le feu",
+    "author": "Stieg Larsson",
+    "genre": "Thriller",
+    "description": "Lisbeth Salander est accusée de trois meurtres et devient la femme la plus recherchée de Suède. Mikael Blomkvist est convaincu de son innocence et mène sa propre enquête. Il découvre que tout est lié au passé de Lisbeth, à son père et à un réseau de trafic sexuel protégé par les services secrets.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1351778626l/5060378.jpg"
+  },
+  {
+    "id": "60",
+    "title": "Les Apparences",
+    "author": "Gillian Flynn",
+    "genre": "Thriller",
+    "description": "Le matin de leur cinquième anniversaire de mariage, Amy Dunne disparaît. Son mari Nick devient rapidement le suspect principal : il a menti sur son alibi, il a une maîtresse, et l'enquête révèle des secrets troublants. Mais qui est vraiment Amy ? Un thriller psychologique aux rebondissements vertigineux où rien n'est ce qu'il semble.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1339602131l/8442457.jpg"
+  },
+  {
+    "id": "61",
+    "title": "La Fille du train",
+    "author": "Paula Hawkins",
+    "genre": "Thriller",
+    "description": "Chaque matin, Rachel prend le même train de banlieue et observe une maison au bord des voies. Elle a baptisé le couple qui y vit Jess et Jason : ils semblent parfaits. Un jour, elle voit quelque chose de choquant par la fenêtre. Quand Jess — en réalité Megan — disparaît, Rachel est entraînée dans l'enquête.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1574805682l/22557272._SY475_.jpg"
+  },
+  {
+    "id": "62",
+    "title": "Le Patient silencieux",
+    "author": "Alex Michaelides",
+    "genre": "Thriller",
+    "description": "Alicia Berenson, artiste célèbre, a tiré cinq balles sur son mari Gabriel puis n'a plus jamais prononcé un mot. Son dernier acte fut de peindre un autoportrait intitulé Alceste. Theo Faber, psychothérapeute criminel fasciné par son cas, obtient un poste dans l'établissement où elle est internée, déterminé à la faire parler.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582759969l/40097951._SY475_.jpg"
+  },
+  {
+    "id": "63",
+    "title": "Autant en emporte le vent",
+    "author": "Margaret Mitchell",
+    "genre": "Romance",
+    "description": "Scarlett O'Hara, fille de planteur en Géorgie, voit son monde s'effondrer avec la Guerre de Sécession. Égoïste et déterminée, elle survit à la guerre, à la famine et à la Reconstruction, tout en poursuivant son amour impossible pour Ashley Wilkes et en repoussant le séduisant Rhett Butler. Une fresque épique sur le Sud américain.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1551144577l/18405._SY475_.jpg"
+  },
+  {
+    "id": "64",
+    "title": "Les Quatre Filles du docteur March",
+    "author": "Louisa May Alcott",
+    "genre": "Classique",
+    "description": "Pendant la Guerre de Sécession, quatre sœurs grandissent en Nouvelle-Angleterre : Meg la raisonnable, Jo l'écrivaine rebelle, Beth la douce musicienne et Amy l'artiste ambitieuse. Avec leur mère Marmee, elles affrontent la pauvreté, la maladie et les déceptions tout en apprenant ce qui compte vraiment dans la vie.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562430254l/1934._SY475_.jpg"
+  },
+  {
+    "id": "65",
+    "title": "Anna Karénine",
+    "author": "Léon Tolstoï",
+    "genre": "Classique",
+    "description": "Anna Karénine, belle aristocrate de Saint-Pétersbourg mariée à un haut fonctionnaire, tombe éperdument amoureuse du comte Vronsky. Leur liaison scandaleuse la conduit à abandonner son mari et son fils adoré pour suivre sa passion. Dans une société qui ne pardonne pas, Anna est prise au piège entre l'amour et la respectabilité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601352433l/15823480._SY475_.jpg"
+  },
+  {
+    "id": "66",
+    "title": "Guerre et Paix",
+    "author": "Léon Tolstoï",
+    "genre": "Histoire",
+    "description": "À travers cinq familles aristocratiques russes — les Bolkonsky, Rostov, Bezoukhov, Kouraguine et Droubetskoï — Tolstoï dépeint la Russie pendant les guerres napoléoniennes de 1805 à 1812. Une fresque monumentale mêlant histoire, philosophie, amour et destins individuels face aux grands bouleversements de l'Histoire.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413215930l/656._SY475_.jpg"
+  },
+  {
+    "id": "67",
+    "title": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "genre": "Classique",
+    "description": "Emma Bovary, élevée au couvent avec des rêves romantiques, épouse Charles, un médecin de campagne médiocre. Déçue par la banalité de sa vie provinciale, elle cherche l'amour passionné dans des liaisons adultères avec Rodolphe puis Léon, et l'excitation dans des dépenses extravagantes. Sa quête désespérée la mène à sa perte.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1335676094l/2175._SY475_.jpg"
+  },
+  {
+    "id": "68",
+    "title": "Notre-Dame de Paris",
+    "author": "Victor Hugo",
+    "genre": "Classique",
+    "description": "Dans le Paris médiéval de 1482, Quasimodo, le sonneur de cloches bossu et sourd de Notre-Dame, est le seul à aimer véritablement la belle bohémienne Esmeralda. Mais l'archidiacre Claude Frollo, son maître, la convoite aussi avec une passion destructrice. Un roman flamboyant sur la beauté, la difformité et la rédemption à l'ombre de la cathédrale.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388195937l/30597.jpg"
+  },
+  {
+    "id": "69",
+    "title": "Le Rouge et le Noir",
+    "author": "Stendhal",
+    "genre": "Classique",
+    "description": "Julien Sorel, fils de charpentier ambitieux dans la France de la Restauration, utilise son intelligence et sa beauté pour s'élever socialement. Précepteur chez les Rênal, il séduit la maîtresse de maison. À Paris, il conquiert Mathilde de la Mole. Mais ses passions le rattrapent. Le rouge de l'armée ou le noir du clergé : quel chemin vers la gloire ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388367371l/45370.jpg"
+  },
+  {
+    "id": "70",
+    "title": "Germinal",
+    "author": "Émile Zola",
+    "genre": "Classique",
+    "description": "Étienne Lantier arrive dans le bassin minier du Nord de la France et descend au fond de la mine du Voreux. Confronté aux conditions de travail inhumaines, à la misère et à la faim, il organise une grève massive. Mais la répression est brutale. Un chef-d'œuvre naturaliste sur la lutte des classes et l'espoir révolutionnaire.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347708599l/28407.jpg"
+  },
+  {
+    "id": "71",
+    "title": "L'Étranger",
+    "author": "Albert Camus",
+    "genre": "Classique",
+    "description": "« Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. » Meursault, employé de bureau à Alger, traverse la vie dans l'indifférence. Quelques jours après l'enterrement de sa mère, il tue un Arabe sur une plage, sans vraie raison. Son procès révèle l'absurdité d'un monde qui condamne l'homme qui refuse de jouer le jeu social.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590930002l/49552._SY475_.jpg"
+  },
+  {
+    "id": "72",
+    "title": "La Peste",
+    "author": "Albert Camus",
+    "genre": "Classique",
+    "description": "La ville d'Oran est frappée par une épidémie de peste et mise en quarantaine. Le Dr. Bernard Rieux, le journaliste Rambert, le mystérieux Tarrou et d'autres se retrouvent prisonniers de la ville et luttent contre le fléau. Chacun à sa manière révèle le meilleur et le pire de l'humanité face à la mort et à l'absurde.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503362564l/11989._SY475_.jpg"
+  },
+  {
+    "id": "73",
+    "title": "Le Parfum",
+    "author": "Patrick Süskind",
+    "genre": "Horreur",
+    "description": "Jean-Baptiste Grenouille naît dans la puanteur du marché aux poissons de Paris en 1738. Il ne dégage aucune odeur corporelle mais possède un odorat extraordinaire, surhumain. Devenu parfumeur, il se lance dans une quête obsessionnelle : créer le parfum parfait, celui qui rendra les hommes amoureux. Même si cela exige de tuer.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1409112276l/343.jpg"
+  },
+  {
+    "id": "74",
+    "title": "Entretien avec un vampire",
+    "author": "Anne Rice",
+    "genre": "Horreur",
+    "description": "Louis de Pointe du Lac raconte à un journaliste comment il est devenu vampire en 1791, transformé par le charismatique et cruel Lestat. Il relate deux siècles d'errance à travers la Nouvelle-Orléans et l'Europe, sa relation avec la fillette vampire Claudia, et sa quête désespérée de sens dans l'immortalité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390166190l/43763._SY475_.jpg"
+  },
+  {
+    "id": "75",
+    "title": "American Gods",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "Shadow Moon sort de prison pour découvrir que sa femme et son meilleur ami sont morts ensemble. Il accepte de travailler pour Mr. Wednesday, un escroc qui se révèle être Odin. Shadow découvre que les dieux anciens amenés en Amérique par les immigrants vivent parmi nous, et qu'une guerre se prépare contre les nouveaux dieux : Internet, Médias, Technologie.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1462924585l/30165203._SY475_.jpg"
+  },
+  {
+    "id": "76",
+    "title": "De bons présages",
+    "author": "Terry Pratchett et Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "L'ange Aziraphale et le démon Crowley vivent sur Terre depuis le jardin d'Éden. Ils se sont habitués aux plaisirs terrestres : les restaurants, les livres, les voitures de collection. Quand l'Antéchrist naît et que l'Apocalypse approche, ils décident de saboter la fin du monde. Problème : l'Antéchrist a été échangé à la naissance.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1615552073l/12067._SY475_.jpg"
+  },
+  {
+    "id": "77",
+    "title": "Coraline",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "Coraline Jones explore sa nouvelle maison et découvre une porte condamnée qui mène à un appartement miroir. Là vivent ses « autres parents », identiques aux vrais mais avec des boutons à la place des yeux. Ils sont plus attentionnés, plus amusants... mais ils veulent la garder pour toujours. Un conte terrifiant sur le courage.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421368434l/17061.jpg"
+  },
+  {
+    "id": "78",
+    "title": "Percy Jackson : Le Voleur de foudre",
+    "author": "Rick Riordan",
+    "genre": "Fantasy",
+    "description": "Percy Jackson, 12 ans, dyslexique et hyperactif, découvre qu'il est le fils de Poséidon, dieu des mers. Accusé d'avoir volé l'éclair de Zeus, il a dix jours pour le retrouver et empêcher une guerre entre les dieux de l'Olympe. Avec Annabeth, fille d'Athéna, et son ami satyre Grover, il traverse l'Amérique en affrontant monstres et Titans.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400602609l/28187.jpg"
+  },
+  {
+    "id": "79",
+    "title": "Eragon",
+    "author": "Christopher Paolini",
+    "genre": "Fantasy",
+    "description": "Eragon, jeune fermier de 15 ans, trouve dans la forêt une pierre bleue mystérieuse qui se révèle être un œuf de dragon. Quand Saphira éclot, il devient le premier Dragonnier depuis la chute de leur ordre. Traqué par le roi maléfique Galbatorix, il doit maîtriser la magie et accomplir son destin. Écrit par un auteur de 15 ans.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366212852l/113436._SY475_.jpg"
+  },
+  {
+    "id": "80",
+    "title": "Le Nom du vent",
+    "author": "Patrick Rothfuss",
+    "genre": "Fantasy",
+    "description": "Kvothe est devenu légende : musicien, magicien, tueur de roi. Aujourd'hui, il n'est plus que Kote, simple aubergiste. Quand un chroniqueur le retrouve, il accepte de raconter sa vraie histoire en trois jours. Son enfance chez les Ruh, le massacre de sa famille par les Chandrian, ses années à l'Université, et sa quête de vengeance.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1270352123l/186074.jpg"
+  },
+  {
+    "id": "81",
+    "title": "Player One",
+    "author": "Ernest Cline",
+    "genre": "Science-Fiction",
+    "description": "En 2045, le monde réel est en ruines, mais tout le monde vit dans l'OASIS, un univers virtuel immersif. Quand son créateur James Halliday meurt, il laisse sa fortune colossale à celui qui trouvera un Easter Egg caché dans le jeu. Wade Watts, orphelin de 18 ans, se lance dans une chasse au trésor truffée de références aux années 80.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500930947l/9969571._SY475_.jpg"
+  },
+  {
+    "id": "82",
+    "title": "Seul sur Mars",
+    "author": "Andy Weir",
+    "genre": "Science-Fiction",
+    "description": "Mark Watney fait partie des premiers humains à marcher sur Mars. Quand une tempête force son équipe à évacuer d'urgence, il est laissé pour mort. Mais Mark est vivant, seul sur une planète hostile, sans moyen de communication ni ravitaillement prévu avant quatre ans. Armé de son ingéniosité et de son humour, il doit survivre.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413706054l/18007564.jpg"
+  },
+  {
+    "id": "83",
+    "title": "World War Z",
+    "author": "Max Brooks",
+    "genre": "Horreur",
+    "description": "La guerre contre les zombies est terminée, l'humanité a survécu. Un agent des Nations Unies parcourt le monde pour recueillir les témoignages des survivants : un médecin chinois qui a vu le premier cas, un mercenaire sud-africain, une pilote abattue au-dessus de la Louisiane... Une chronique glaçante de l'apocalypse zombie.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528312647l/8908.jpg"
+  },
+  {
+    "id": "84",
+    "title": "Je suis une légende",
+    "author": "Richard Matheson",
+    "genre": "Horreur",
+    "description": "Robert Neville est le dernier homme sur Terre. Une pandémie a transformé l'humanité en vampires. Le jour, il fortifie sa maison et chasse les créatures endormies. La nuit, elles viennent et appellent son nom. Dans sa solitude absolue, il cherche une explication scientifique au fléau. Mais qu'est-ce qu'un monstre quand on est le dernier de son espèce ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389351302l/14064._SY475_.jpg"
+  },
+  {
+    "id": "85",
+    "title": "Le Silence des agneaux",
+    "author": "Thomas Harris",
+    "genre": "Thriller",
+    "description": "Buffalo Bill kidnappe et tue des femmes dans le Midwest. Le FBI envoie Clarice Starling, jeune stagiaire brillante, consulter le Dr. Hannibal Lecter, psychiatre cannibale et génie emprisonné. Lecter accepte d'aider à dresser le profil du tueur, mais ses conseils ont un prix : les secrets les plus intimes de Clarice.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442720566l/23807._SY475_.jpg"
+  },
+  {
+    "id": "86",
+    "title": "Jurassic Park",
+    "author": "Michael Crichton",
+    "genre": "Science-Fiction",
+    "description": "Le milliardaire John Hammond a réalisé l'impossible : recréer des dinosaures vivants grâce à l'ADN préservé dans des moustiques fossilisés. Sur une île au large du Costa Rica, il construit le parc d'attractions ultime. Mais lors de la visite inaugurale, un sabotage désactive les systèmes de sécurité. Les prédateurs sont lâchés.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386922194l/40604658._SY475_.jpg"
+  },
+  {
+    "id": "87",
+    "title": "Vingt mille lieues sous les mers",
+    "author": "Jules Verne",
+    "genre": "Aventure",
+    "description": "1866 : un monstre marin mystérieux attaque les navires. Le professeur Aronnax, son serviteur Conseil et le harponneur Ned Land partent le chasser. Ils découvrent qu'il s'agit du Nautilus, sous-marin extraordinaire commandé par le capitaine Nemo, misanthrope de génie. Commence alors un voyage fantastique à travers les océans du globe.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1494979255l/33507._SY475_.jpg"
+  },
+  {
+    "id": "88",
+    "title": "Le Tour du monde en quatre-vingts jours",
+    "author": "Jules Verne",
+    "genre": "Aventure",
+    "description": "Londres, 1872. Le gentleman Phileas Fogg parie vingt mille livres qu'il peut faire le tour du monde en 80 jours. Avec son nouveau valet français Jean Passepartout, il traverse l'Europe, l'Inde, la Chine, le Japon et l'Amérique, utilisant trains, bateaux, éléphants et traîneaux. Mais le détective Fix le prend pour un voleur de banque.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389151403l/54479.jpg"
+  },
+  {
+    "id": "89",
+    "title": "L'Île au trésor",
+    "author": "Robert Louis Stevenson",
+    "genre": "Aventure",
+    "description": "Jim Hawkins, fils d'aubergiste, découvre une carte au trésor dans le coffre d'un vieux pirate mort. Il embarque sur l'Hispaniola avec le docteur Livesey et le chevalier Trelawney pour trouver le butin du capitaine Flint. Mais parmi l'équipage se cache Long John Silver, le cuisinier à la jambe de bois, et ses complices pirates.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1604340029l/295._SY475_.jpg"
+  },
+  {
+    "id": "90",
+    "title": "Robinson Crusoé",
+    "author": "Daniel Defoe",
+    "genre": "Aventure",
+    "description": "Robinson Crusoé, jeune Anglais rebelle, s'embarque pour l'aventure contre l'avis de son père. Après un naufrage, il échoue seul sur une île déserte. Pendant 28 ans, il survit grâce à son ingéniosité : il construit un abri, cultive des céréales, élève des chèvres. Un jour, il sauve un indigène qu'il baptise Vendredi. Le premier roman d'aventures moderne.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408927710l/2932._SY475_.jpg"
+  },
+  {
+    "id": "91",
+    "title": "Les Trois Mousquetaires",
+    "author": "Alexandre Dumas",
+    "genre": "Aventure",
+    "description": "Le jeune d'Artagnan quitte sa Gascogne natale pour devenir mousquetaire du roi Louis XIII. À Paris, il se lie d'amitié avec Athos, Porthos et Aramis : « Un pour tous, tous pour un ! » Ensemble, ils affrontent le cardinal de Richelieu et la redoutable Milady de Winter pour protéger l'honneur de la reine Anne d'Autriche.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611260073l/7190.jpg"
+  },
+  {
+    "id": "92",
+    "title": "Don Quichotte",
+    "author": "Miguel de Cervantes",
+    "genre": "Classique",
+    "description": "Alonso Quichano, gentilhomme de la Manche, a tellement lu de romans de chevalerie qu'il perd la raison. Il se rebaptise Don Quichotte, enfourche son cheval Rossinante et part redresser les torts, accompagné de son écuyer Sancho Panza. Il combat des moulins à vent qu'il prend pour des géants. Le premier roman moderne, une satire immortelle.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546112331l/3836._SY475_.jpg"
+  },
+  {
+    "id": "93",
+    "title": "Cent ans de solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "Classique",
+    "description": "José Arcadio Buendía fonde le village de Macondo au cœur de la jungle colombienne. À travers sept générations de Buendía, García Márquez raconte un siècle d'histoire, d'amours, de guerres et de miracles. Les fantômes conversent avec les vivants, il pleut des fleurs jaunes, une femme monte au ciel. Le chef-d'œuvre du réalisme magique.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327881361l/320._SY475_.jpg"
+  },
+  {
+    "id": "94",
+    "title": "Le Vieil Homme et la Mer",
+    "author": "Ernest Hemingway",
+    "genre": "Classique",
+    "description": "Santiago, vieux pêcheur cubain, n'a rien pris depuis 84 jours. Seul en mer, il accroche un marlin gigantesque qui l'entraîne toujours plus loin de la côte. Pendant trois jours et trois nuits, l'homme et le poisson luttent dans un combat épique. Une méditation sobre et puissante sur le courage, la dignité et la défaite. Prix Pulitzer 1953.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1329189714l/2165._SY475_.jpg"
+  },
+  {
+    "id": "95",
+    "title": "L'Odyssée",
+    "author": "Homère",
+    "genre": "Classique",
+    "description": "Après dix ans de guerre à Troie, Ulysse met dix ans à rentrer chez lui, à Ithaque. Il affronte le Cyclope Polyphème, résiste au chant des Sirènes, navigue entre Charybde et Scylla, passe sept ans chez la nymphe Calypso. Pendant ce temps, Pénélope attend son retour et repousse les prétendants. L'épopée fondatrice de la littérature occidentale.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390173285l/1381._SY475_.jpg"
+  },
+  {
+    "id": "96",
+    "title": "Les Métamorphoses",
+    "author": "Ovide",
+    "genre": "Classique",
+    "description": "En quinze livres et près de 12 000 vers, Ovide raconte les plus grands mythes de l'Antiquité, de la création du monde à l'apothéose de César. Daphné transformée en laurier, Narcisse amoureux de son reflet, Orphée descendant aux Enfers, Pygmalion et sa statue qui prend vie. Une œuvre fondatrice qui a nourri l'art occidental pendant deux millénaires.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1393156592l/1715.jpg"
+  },
+  {
+    "id": "97",
+    "title": "Hamlet",
+    "author": "William Shakespeare",
+    "genre": "Classique",
+    "description": "Le fantôme du roi du Danemark révèle à son fils Hamlet qu'il a été assassiné par son propre frère Claudius, qui a épousé la reine et pris le trône. « Être ou ne pas être », Hamlet hésite à se venger, feint la folie, et entraîne dans sa chute Ophélie, Polonius et toute la cour. La plus grande tragédie de la littérature anglaise.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1351051208l/1420._SY475_.jpg"
+  },
+  {
+    "id": "98",
+    "title": "Macbeth",
+    "author": "William Shakespeare",
+    "genre": "Classique",
+    "description": "Trois sorcières prophétisent que Macbeth, général écossais, deviendra roi. Poussé par son ambition et les manipulations de Lady Macbeth, il assassine le roi Duncan dans son propre château. Mais le sang appelle le sang, et la culpabilité ronge le couple royal. « Quelque chose de pourri dans ce royaume ». Une tragédie sur le pouvoir et la folie.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622841036l/8852._SY475_.jpg"
+  },
+  {
+    "id": "99",
+    "title": "Les Fleurs du mal",
+    "author": "Charles Baudelaire",
+    "genre": "Poésie",
+    "description": "« Hypocrite lecteur, — mon semblable, — mon frère ! » Ce recueil révolutionnaire explore le spleen, l'ennui existentiel, mais aussi l'idéal, la beauté et l'amour charnel. Baudelaire trouve la poésie dans la laideur, la modernité dans la ville. Condamné pour outrage aux bonnes mœurs en 1857, il a transformé la poésie française pour toujours.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427031034l/230876.jpg"
+  },
+  {
+    "id": "100",
+    "title": "Les Contemplations",
+    "author": "Victor Hugo",
+    "genre": "Poésie",
+    "description": "« Les Mémoires d'une âme », divisés entre « Autrefois » et « Aujourd'hui ». Le 4 septembre 1843, Léopoldine, fille adorée de Victor Hugo, se noie avec son mari dans la Seine. Cette tragédie marque la rupture du recueil. De la joie de l'amour et de la nature aux méditations sur la mort et l'au-delà, Hugo atteint ici des sommets lyriques.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386924167l/481416.jpg"
+  },
+  {
+    "id": "101",
+    "title": "Harry Potter à l'école des sorciers",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Le jour de ses onze ans, Harry Potter, orphelin maltraité par son oncle et sa tante, découvre qu'il est un sorcier. Il reçoit une lettre l'invitant à rejoindre Poudlard, l'école de sorcellerie. Il y découvre un monde magique, se fait des amis pour la vie et apprend que ses parents ont été assassinés par le terrible Voldemort.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022l/3._SY475_.jpg"
+  },
+  {
+    "id": "102",
+    "title": "Harry Potter et la Chambre des Secrets",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Un elfe de maison nommé Dobby avertit Harry de ne pas retourner à Poudlard. Mais Harry y retourne quand même et découvre que la légendaire Chambre des Secrets a été ouverte. Un monstre pétrifie les élèves nés de parents moldus. Harry doit découvrir la vérité sur l'héritier de Serpentard.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474169725l/15881._SY475_.jpg"
+  },
+  {
+    "id": "103",
+    "title": "Harry Potter et le Prisonnier d'Azkaban",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Sirius Black, un dangereux criminel, s'est échappé de la prison d'Azkaban. On dit qu'il veut tuer Harry Potter. Les Détraqueurs, gardiens de la prison, encerclent Poudlard. Harry découvre des vérités surprenantes sur son passé et sur la nuit où ses parents sont morts.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630547330l/5._SY475_.jpg"
+  },
+  {
+    "id": "104",
+    "title": "Harry Potter et la Coupe de Feu",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Poudlard accueille le Tournoi des Trois Sorciers, une compétition légendaire entre trois écoles de magie. Mystérieusement, Harry est sélectionné comme quatrième champion malgré son jeune âge. Il doit affronter des dragons, des sirènes et un labyrinthe mortel. Mais quelqu'un manipule le tournoi dans l'ombre.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554006152l/6._SY475_.jpg"
+  },
+  {
+    "id": "105",
+    "title": "Harry Potter et le Prince de Sang-Mêlé",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "description": "Voldemort agit désormais ouvertement et la guerre a commencé. Dumbledore donne des leçons particulières à Harry, lui révélant le passé de Tom Jedusor. Harry trouve un vieux manuel de potions annoté par le mystérieux « Prince de Sang-Mêlé ». Drago Malefoy prépare quelque chose de terrible.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587697303l/1._SY475_.jpg"
+  },
+  {
+    "id": "106",
+    "title": "L'Embrasement",
+    "author": "Suzanne Collins",
+    "genre": "Science-Fiction",
+    "description": "Katniss et Peeta ont survécu aux Hunger Games, mais le Capitole n'a pas oublié leur défi. Lors de la Tournée de la Victoire, Katniss découvre que sa rébellion a allumé une étincelle dans les districts. Pour l'Expiation, les vainqueurs des années précédentes sont renvoyés dans l'arène. La révolution gronde.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722941l/6148028.jpg"
+  },
+  {
+    "id": "107",
+    "title": "La Révolte",
+    "author": "Suzanne Collins",
+    "genre": "Science-Fiction",
+    "description": "Katniss est devenue le Geai Moqueur, symbole de la rébellion contre le Capitole. Réfugiée au District 13, elle doit décider si elle accepte de devenir le visage de la révolution. Peeta est prisonnier du Capitole et retourné contre elle. La guerre finale pour la liberté de Panem a commencé.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722918l/7260188.jpg"
+  },
+  {
+    "id": "108",
+    "title": "Insurgent",
+    "author": "Veronica Roth",
+    "genre": "Science-Fiction",
+    "description": "Après l'attaque des Érudits contre les Altruistes, Tris et les survivants cherchent refuge chez les Fraternels. Mais la paix est de courte durée. Tris lutte avec sa culpabilité et ses secrets tandis que la guerre entre factions s'intensifie. Une vérité explosive sur leur monde attend d'être révélée.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1325667729l/11735983.jpg"
+  },
+  {
+    "id": "109",
+    "title": "Allégeance",
+    "author": "Veronica Roth",
+    "genre": "Science-Fiction",
+    "description": "Tris découvre ce qui se trouve au-delà de la clôture qui entoure Chicago. La vérité sur les Divergents et l'expérience qui a créé leur société remet tout en question. Elle doit choisir entre sa loyauté envers ses amis et le bien commun. Certains choix exigent le sacrifice ultime.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1358782931l/13521444.jpg"
+  },
+  {
+    "id": "110",
+    "title": "Tentation",
+    "author": "Stephenie Meyer",
+    "genre": "Fantasy",
+    "description": "Edward quitte Bella pour la protéger, la laissant dévastée. Elle trouve du réconfort auprès de Jacob Black, qui cache lui aussi un secret surnaturel : il est un loup-garou. Quand Bella se met en danger pour entendre la voix d'Edward, elle déclenche une série d'événements qui la mènera à Volterra.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361038355l/26691.jpg"
+  },
+  {
+    "id": "111",
+    "title": "Hésitation",
+    "author": "Stephenie Meyer",
+    "genre": "Fantasy",
+    "description": "Bella doit choisir entre Edward et Jacob alors qu'une armée de vampires nouveau-nés menace Seattle. Victoria, assoiffée de vengeance, se rapproche. Vampires et loups-garous doivent s'allier pour protéger Bella. Elle doit aussi décider si elle veut devenir vampire et abandonner son humanité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361039438l/428263.jpg"
+  },
+  {
+    "id": "112",
+    "title": "Révélation",
+    "author": "Stephenie Meyer",
+    "genre": "Fantasy",
+    "description": "Bella et Edward se marient et partent en lune de miel. Mais Bella tombe enceinte d'un enfant mi-humain, mi-vampire, une grossesse qui la tue à petit feu. Après sa transformation, les Volturi apprennent l'existence de Renesmée et viennent la détruire. Les Cullen rassemblent des alliés du monde entier.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361039443l/1162543.jpg"
+  },
+  {
+    "id": "113",
+    "title": "La Terre des Ombres",
+    "author": "James Dashner",
+    "genre": "Science-Fiction",
+    "description": "Thomas et les autres Blocards ont échappé au Labyrinthe, mais leurs épreuves ne font que commencer. Le monde extérieur a été ravagé par des éruptions solaires et un virus mortel appelé la Braise. Le WICKED les envoie traverser la Terre Brûlée, un désert peuplé de Fondus, des humains devenus fous.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356850889l/7631105.jpg"
+  },
+  {
+    "id": "114",
+    "title": "Le Remède mortel",
+    "author": "James Dashner",
+    "genre": "Science-Fiction",
+    "description": "Thomas découvre enfin la vérité sur le WICKED et ses véritables intentions. Avec ses amis, il s'échappe pour rejoindre le Bras Droit, un groupe rebelle. Mais le WICKED ne les laissera pas partir si facilement. Dans ce final explosif, Thomas doit décider jusqu'où il est prêt à aller pour sauver l'humanité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1358993789l/7868716.jpg"
+  },
+  {
+    "id": "115",
+    "title": "La Mer des monstres",
+    "author": "Rick Riordan",
+    "genre": "Fantasy",
+    "description": "L'arbre de Thalia, qui protège la Colonie des Sang-Mêlé, a été empoisonné. Pour le sauver, Percy et ses amis doivent trouver la Toison d'Or, cachée quelque part dans la Mer des Monstres — le Triangle des Bermudes. Percy découvre aussi qu'il a un frère cyclope nommé Tyson.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400602591l/28186.jpg"
+  },
+  {
+    "id": "116",
+    "title": "Le Sort du Titan",
+    "author": "Rick Riordan",
+    "genre": "Fantasy",
+    "description": "Annabeth est capturée et Artémis, déesse de la chasse, disparaît. Percy part avec les Chasseresses d'Artémis pour les retrouver. Ils découvrent que le Titan Atlas s'est libéré et que les forces de Cronos se rassemblent. Une prophétie annonce que l'un d'eux ne survivra pas à cette quête.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361038385l/561456.jpg"
+  },
+  {
+    "id": "117",
+    "title": "La Bataille du Labyrinthe",
+    "author": "Rick Riordan",
+    "genre": "Fantasy",
+    "description": "L'armée de Cronos a trouvé un moyen d'envahir la Colonie : le Labyrinthe de Dédale, un réseau souterrain qui change constamment. Percy et ses amis doivent trouver Dédale avant l'ennemi. Dans les profondeurs du labyrinthe, ils affrontent des monstres anciens et découvrent des secrets sur Luke.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1368776975l/2120932.jpg"
+  },
+  {
+    "id": "118",
+    "title": "Le Dernier Olympien",
+    "author": "Rick Riordan",
+    "genre": "Fantasy",
+    "description": "Cronos mène son armée contre l'Olympe, qui se trouve au sommet de l'Empire State Building. Les dieux sont occupés à combattre Typhon. Percy et les demi-dieux doivent défendre Manhattan seuls. La Grande Prophétie va enfin s'accomplir et Percy doit faire un choix qui décidera du sort de l'Olympe.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327924597l/4502507.jpg"
+  },
+  {
+    "id": "119",
+    "title": "L'Aîné",
+    "author": "Christopher Paolini",
+    "genre": "Fantasy",
+    "description": "Eragon et Saphira voyagent vers Ellesméra, la capitale des elfes, pour poursuivre leur formation. Eragon apprend l'ancienne magie et découvre des secrets sur les Dragonniers. Pendant ce temps, son cousin Roran mène les villageois de Carvahall vers la sécurité. La guerre contre Galbatorix s'intensifie.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1370619663l/45978.jpg"
+  },
+  {
+    "id": "120",
+    "title": "Brisingr",
+    "author": "Christopher Paolini",
+    "genre": "Fantasy",
+    "description": "Eragon doit forger une nouvelle épée de Dragonnier, car Zar'roc lui a été prise. Il voyage chez les nains pour le couronnement de leur nouveau roi et découvre des traîtres parmi eux. Les Vardens progressent contre l'Empire, mais Galbatorix possède des armes secrètes. Eragon apprend enfin la vérité sur ses origines.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391443693l/2248573.jpg"
+  },
+  {
+    "id": "121",
+    "title": "L'Héritage",
+    "author": "Christopher Paolini",
+    "genre": "Fantasy",
+    "description": "La bataille finale contre Galbatorix approche. Eragon et les Vardens assiègent Urû'baen, la capitale de l'Empire. Eragon doit affronter le tyran qui a détruit les Dragonniers il y a un siècle. Les secrets des Eldunarí et le Nom des Noms pourraient faire la différence.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348585003l/7664041.jpg"
+  },
+  {
+    "id": "122",
+    "title": "La Peur sage de l'homme",
+    "author": "Patrick Rothfuss",
+    "genre": "Fantasy",
+    "description": "Kvothe continue son récit. Renvoyé temporairement de l'Université, il voyage à Vintas pour servir le Maer Alveron. Il apprend le Ketan auprès des Adem, passe du temps avec Felurian la fée, et poursuit sa quête des Chandrian. Mais plus il cherche, plus les questions s'accumulent.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1452624392l/1215032.jpg"
+  },
+  {
+    "id": "123",
+    "title": "Le Silmarillion",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Bien avant Bilbo et Frodon, les Premiers-Nés — les Elfes — s'éveillèrent sous les étoiles. Ce recueil de mythes raconte la création d'Arda, la rébellion de Morgoth, la fabrication des Silmarils par Fëanor, et les guerres tragiques pour les récupérer. L'histoire de la Terre du Milieu depuis ses origines.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1336502583l/7332.jpg"
+  },
+  {
+    "id": "124",
+    "title": "Les Enfants de Húrin",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Túrin Turambar, fils de Húrin, est maudit par Morgoth, le Seigneur des Ténèbres. Malgré son courage et ses exploits héroïques, il apporte la destruction partout où il va. Son histoire tragique, qui culmine dans son combat contre le dragon Glaurung, est l'un des récits les plus sombres de la Terre du Milieu.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1371063432l/597790.jpg"
+  },
+  {
+    "id": "125",
+    "title": "L'Assassin royal : L'Apprenti assassin",
+    "author": "Robin Hobb",
+    "genre": "Fantasy",
+    "description": "Fitz est le bâtard du prince Chevalerie, abandonné à la cour du roi des Six-Duchés. Recueilli par le maître d'écurie Burrich, il grandit dans l'ombre. Mais le roi Subtil a des plans pour lui : il sera formé par Umbre, l'assassin royal, pour servir le trône en secret. Fitz possède aussi le Vif, un don interdit.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388522630l/45107.jpg"
+  },
+  {
+    "id": "126",
+    "title": "L'Assassin du roi",
+    "author": "Robin Hobb",
+    "genre": "Fantasy",
+    "description": "Les Pirates rouges attaquent les côtes des Six-Duchés, transformant leurs victimes en Forgisés. Le prince Royal complote contre son frère Vérité. Fitz doit naviguer entre ses missions d'assassin, son amour interdit pour Molly, et sa loyauté envers le trône. La trahison guette à chaque tournant.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388522429l/68488.jpg"
+  },
+  {
+    "id": "127",
+    "title": "La Quête de l'assassin",
+    "author": "Robin Hobb",
+    "genre": "Fantasy",
+    "description": "Fitz a été torturé et laissé pour mort. Grâce au Vif, il survit mais à un prix terrible. Royal a pris le pouvoir et Vérité a disparu dans sa quête des Anciens. Fitz doit le retrouver, seul espoir contre les Pirates rouges. Son voyage à travers les Montagnes le mènera aux Dragons de pierre.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388522513l/45109.jpg"
+  },
+  {
+    "id": "128",
+    "title": "Le Clan des Otori : Le Silence du rossignol",
+    "author": "Lian Hearn",
+    "genre": "Fantasy",
+    "description": "Dans un Japon féodal fantastique, Takeo voit son village massacré par le seigneur Iida. Il est sauvé par sire Shigeru du clan des Otori et découvre qu'il appartient à la Tribu, une mystérieuse organisation d'assassins aux pouvoirs surnaturels. Takeo doit choisir entre vengeance, loyauté et amour.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403194930l/77160.jpg"
+  },
+  {
+    "id": "129",
+    "title": "La Croisée des mondes : Les Royaumes du Nord",
+    "author": "Philip Pullman",
+    "genre": "Fantasy",
+    "description": "Lyra Belacqua vit parmi les Érudits d'Oxford dans un monde où chaque humain possède un dæmon, une manifestation animale de son âme. Quand des enfants disparaissent, Lyra part vers le Nord avec les gitans. Elle y rencontrera des ours en armure, des sorcières et découvrira la vérité sur la mystérieuse Poussière.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505766203l/119322._SY475_.jpg"
+  },
+  {
+    "id": "130",
+    "title": "La Croisée des mondes : La Tour des anges",
+    "author": "Philip Pullman",
+    "genre": "Fantasy",
+    "description": "Lyra rencontre Will Parry, un garçon de notre monde. Ensemble, ils découvrent Cittàgazze, une ville entre les mondes, et le poignard subtil capable de découper des passages entre les univers. Mais la Poussière s'échappe par ces fenêtres, et quelque chose de terrible se prépare.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505766432l/119324._SY475_.jpg"
+  },
+  {
+    "id": "131",
+    "title": "La Croisée des mondes : Le Miroir d'ambre",
+    "author": "Philip Pullman",
+    "genre": "Fantasy",
+    "description": "Will et Lyra doivent descendre au pays des morts pour accomplir leur destin. La guerre entre l'Autorité et Lord Asriel atteint son paroxysme. Lyra est la nouvelle Ève, et l'avenir de tous les mondes repose sur ses épaules. Mais le prix à payer pour sauver l'univers pourrait être plus élevé qu'ils ne l'imaginent.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505766316l/18122._SY475_.jpg"
+  },
+  {
+    "id": "132",
+    "title": "Le Livre de la jungle",
+    "author": "Rudyard Kipling",
+    "genre": "Aventure",
+    "description": "Mowgli, un petit d'homme, est recueilli et élevé par une famille de loups dans la jungle indienne. Baloo l'ours lui enseigne la Loi de la Jungle, Bagheera la panthère le protège. Mais Shere Khan, le tigre mangeur d'hommes, veut sa mort. Mowgli devra un jour affronter son ennemi et choisir entre deux mondes.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1325774833l/77270.jpg"
+  },
+  {
+    "id": "133",
+    "title": "L'Appel de la forêt",
+    "author": "Jack London",
+    "genre": "Aventure",
+    "description": "Buck, un puissant chien de Californie, est volé et vendu comme chien de traîneau pendant la ruée vers l'or du Klondike. Dans le Grand Nord sauvage, il découvre la brutalité mais aussi un instinct primitif qui s'éveille en lui. Sous la loi du bâton et du croc, Buck devient de plus en plus sauvage.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327528858l/43049.jpg"
+  },
+  {
+    "id": "134",
+    "title": "Croc-Blanc",
+    "author": "Jack London",
+    "genre": "Aventure",
+    "description": "Croc-Blanc naît dans le Grand Nord canadien, fils d'une louve et d'un chien. Capturé par les Indiens, il devient le chien le plus féroce du camp. Vendu à un homme cruel qui l'utilise pour des combats, il devient une machine à tuer. Seul l'amour d'un maître bon pourra le sauver de lui-même.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327528835l/43047.jpg"
+  },
+  {
+    "id": "135",
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "genre": "Aventure",
+    "description": "« Appelez-moi Ismaël. » Le jeune marin s'embarque sur le Pequod, un baleinier commandé par le capitaine Achab. Celui-ci est obsédé par Moby Dick, une baleine blanche légendaire qui lui a arraché la jambe. Cette quête de vengeance mènera l'équipage aux confins des océans et vers une fin tragique.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327940656l/153747.jpg"
+  },
+  {
+    "id": "136",
+    "title": "Voyage au centre de la Terre",
+    "author": "Jules Verne",
+    "genre": "Aventure",
+    "description": "Le professeur Lidenbrock découvre un manuscrit crypté révélant l'entrée d'un passage vers le centre de la Terre par un volcan islandais. Avec son neveu Axel et leur guide Hans, il descend dans les entrailles du globe. Ils découvrent un monde souterrain avec une mer, des champignons géants et des créatures préhistoriques.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389754903l/32829.jpg"
+  },
+  {
+    "id": "137",
+    "title": "De la Terre à la Lune",
+    "author": "Jules Verne",
+    "genre": "Science-Fiction",
+    "description": "Après la Guerre de Sécession, le Gun-Club de Baltimore décide d'envoyer un projectile sur la Lune. L'excentrique Michel Ardan propose de voyager à l'intérieur. Avec le président Barbicane et le capitaine Nicholl, ils s'embarquent dans un obus géant tiré par un canon de 300 mètres. Destination : la Lune.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347464238l/367003.jpg"
+  },
+  {
+    "id": "138",
+    "title": "L'Île mystérieuse",
+    "author": "Jules Verne",
+    "genre": "Aventure",
+    "description": "Cinq Américains s'échappent de Richmond en ballon pendant la Guerre de Sécession et échouent sur une île déserte du Pacifique. L'ingénieur Cyrus Smith utilise ses connaissances pour recréer une civilisation à partir de rien. Mais une présence mystérieuse semble veiller sur eux et les aider dans les moments critiques.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389755098l/32831.jpg"
+  },
+  {
+    "id": "139",
+    "title": "Michel Strogoff",
+    "author": "Jules Verne",
+    "genre": "Aventure",
+    "description": "L'Empire russe est menacé par une invasion tartare en Sibérie. Le courrier du tsar Michel Strogoff doit traverser 5 000 kilomètres pour porter un message au Grand-Duc à Irkoutsk. Trahi, capturé, torturé, il poursuit sa mission à travers les steppes glacées. Un hymne au courage et à la fidélité.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388282855l/196654.jpg"
+  },
+  {
+    "id": "140",
+    "title": "Simetierre",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Louis Creed s'installe avec sa famille dans une maison du Maine, près d'une route dangereuse. Derrière le « simetierre » des animaux se trouve un ancien cimetière indien aux pouvoirs terrifiants. Ce qui est enterré là ne reste pas mort. Mais ce qui revient n'est plus tout à fait le même.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528926100l/33124137.jpg"
+  },
+  {
+    "id": "141",
+    "title": "Le Fléau",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Un virus militaire s'échappe d'un laboratoire et extermine 99% de l'humanité en quelques semaines. Les survivants se rassemblent autour de deux figures opposées : Mère Abigail, une centenaire prophétique, et Randall Flagg, l'Homme en Noir. Le combat final entre le bien et le mal commence.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1213131305l/149267.jpg"
+  },
+  {
+    "id": "142",
+    "title": "La Ligne verte",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Paul Edgecombe est gardien-chef du couloir de la mort en 1932. Arrive John Coffey, un géant noir condamné pour le meurtre de deux fillettes. Mais John possède un don miraculeux de guérison. Paul découvre la vérité sur le crime et doit faire face à un terrible dilemme moral.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1373903563l/11566.jpg"
+  },
+  {
+    "id": "143",
+    "title": "La Tour sombre : Le Pistolero",
+    "author": "Stephen King",
+    "genre": "Fantasy",
+    "description": "« L'homme en noir fuyait à travers le désert, et le pistolero le poursuivait. » Roland Deschain est le dernier pistolero, chevalier d'un monde qui a « bougé ». Il poursuit Walter à travers un paysage post-apocalyptique, cherchant la Tour Sombre qui se dresse au centre de tous les univers.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554220416l/43615.jpg"
+  },
+  {
+    "id": "144",
+    "title": "Christine",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Arnie Cunningham achète Christine, une Plymouth Fury 1958 en ruines. Obsédé par sa restauration, il change : il devient confiant, agressif, dangereux. Christine aussi change — elle se répare toute seule et écrase ceux qui lui veulent du mal. La voiture est possédée par une jalousie meurtrière.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1509157820l/10629._SY475_.jpg"
+  },
+  {
+    "id": "145",
+    "title": "Cujo",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Cujo est un Saint-Bernard gentil et aimant. Mordu par une chauve-souris enragée, il devient un monstre de 100 kilos. Donna Trenton et son fils de quatre ans se retrouvent piégés dans leur voiture en panne devant la ferme où Cujo les attend. Une lutte pour la survie sous un soleil de plomb.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1509157681l/10603._SY475_.jpg"
+  },
+  {
+    "id": "146",
+    "title": "Docteur Sleep",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Dan Torrance, le petit garçon de Shining, est devenu adulte. Alcoolique, il utilise son don pour aider les mourants dans un hospice. Il rencontre Abra, une fillette au Shining puissant. Ensemble, ils doivent affronter le Nœud Vrai, un groupe de quasi-immortels qui se nourrissent des enfants doués.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377098566l/16130549.jpg"
+  },
+  {
+    "id": "147",
+    "title": "Salem",
+    "author": "Stephen King",
+    "genre": "Horreur",
+    "description": "Ben Mears retourne à Jerusalem's Lot, la petite ville du Maine qui hante ses cauchemars. Un antiquaire mystérieux s'est installé dans la maison Marsten, réputée maléfique. Bientôt, les habitants commencent à mourir... et à se relever. Salem est envahi par les vampires.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327891565l/11590.jpg"
+  },
+  {
+    "id": "148",
+    "title": "22/11/63",
+    "author": "Stephen King",
+    "genre": "Science-Fiction",
+    "description": "Jake Epping découvre un portail temporel qui mène toujours au même jour de 1958. Son ami mourant lui confie une mission : empêcher l'assassinat de Kennedy le 22 novembre 1963. Jake passe cinq ans dans le passé, traquant Lee Harvey Oswald. Mais le passé ne veut pas être changé.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327876792l/10644930.jpg"
+  },
+  {
+    "id": "149",
+    "title": "Lestat le vampire",
+    "author": "Anne Rice",
+    "genre": "Horreur",
+    "description": "Lestat raconte sa propre histoire : son enfance dans la France du XVIIIe siècle, sa transformation en vampire par Magnus, sa vie de rockstar dans les années 1980. Il révèle ses rencontres avec les plus anciens vampires et les secrets des origines de leur race.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386924361l/43814.jpg"
+  },
+  {
+    "id": "150",
+    "title": "La Reine des damnés",
+    "author": "Anne Rice",
+    "genre": "Horreur",
+    "description": "Akasha, la première vampire, se réveille après 6 000 ans de sommeil. Elle veut créer un nouvel Éden en exterminant 90% des hommes. Seul Lestat, qu'elle a choisi pour roi, peut l'arrêter. Les vampires du monde entier se rassemblent pour l'affronter.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386924498l/43818.jpg"
+  },
+  {
+    "id": "151",
+    "title": "Neverwhere",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "Richard Mayhew aide une jeune fille blessée dans le métro londonien et bascule dans le Londres d'En Bas, un monde souterrain où vivent ceux qui sont tombés entre les mailles de la société. Avec Door, dont la famille a été assassinée, il doit survivre aux dangers de ce monde invisible.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348747943l/14497.jpg"
+  },
+  {
+    "id": "152",
+    "title": "L'Océan au bout du chemin",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "Un homme retourne dans sa ville natale pour un enterrement et se souvient d'événements oubliés depuis l'enfance. À sept ans, il a rencontré Lettie Hempstock, une fille qui prétendait avoir un océan au fond de son jardin. Ensemble, ils ont affronté une créature venue d'au-delà de l'univers.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1351914778l/15783514.jpg"
+  },
+  {
+    "id": "153",
+    "title": "Stardust",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "Tristan Thorn promet à la belle Victoria de lui rapporter une étoile tombée du ciel. Il traverse le mur qui sépare son village du royaume de Féerie. Mais l'étoile est une jeune femme nommée Yvaine, convoitée par des sorcières qui veulent son cœur et des princes qui veulent la couronne.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1459127018l/16793._SY475_.jpg"
+  },
+  {
+    "id": "154",
+    "title": "Le Graveyard Book",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "description": "Un bébé échappe au meurtre de sa famille en rampant jusqu'au cimetière voisin. Les fantômes l'adoptent et l'appellent Nobody « Bod » Owens. Élevé par les morts, il apprend leurs pouvoirs. Mais l'homme Jack, qui a tué sa famille, le cherche toujours.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1531295292l/2213661.jpg"
+  },
+  {
+    "id": "155",
+    "title": "L'Ombre du vent",
+    "author": "Carlos Ruiz Zafón",
+    "genre": "Thriller",
+    "description": "Barcelone, 1945. Daniel Sempere découvre au Cimetière des Livres Oubliés un roman de Julián Carax qui change sa vie. Il apprend que quelqu'un détruit systématiquement tous les exemplaires des œuvres de Carax. Son enquête le plonge dans une histoire d'amour maudit et de vengeance.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463383393l/1232._SY475_.jpg"
+  },
+  {
+    "id": "156",
+    "title": "Le Jeu de l'ange",
+    "author": "Carlos Ruiz Zafón",
+    "genre": "Thriller",
+    "description": "Barcelone, années 1920. David Martín, écrivain maudit, vit dans une vieille maison tour où un homme est mort mystérieusement. Un éditeur énigmatique lui propose une fortune pour écrire un livre capable de changer le cœur des hommes. Mais le prix à payer pourrait être son âme.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327870512l/3373395.jpg"
+  },
+  {
+    "id": "157",
+    "title": "Marina",
+    "author": "Carlos Ruiz Zafón",
+    "genre": "Thriller",
+    "description": "Barcelone, 1979. Oscar Drai s'aventure dans une vieille maison abandonnée et rencontre Marina et son père, un peintre reclus. Ensemble, ils découvrent un mystère lié à des photographies jaunies, un papillon noir et un cimetière oublié. Une histoire de science folle et d'amour impossible.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327910064l/1382220.jpg"
+  },
+  {
+    "id": "158",
+    "title": "Millenium 3 : La Reine dans le palais des courants d'air",
+    "author": "Stieg Larsson",
+    "genre": "Thriller",
+    "description": "Lisbeth Salander, grièvement blessée, est hospitalisée. Elle doit répondre des meurtres dont on l'accuse et affronter son père, un ancien espion soviétique. Mikael Blomkvist prépare le numéro de Millénium qui révélera la conspiration. La vérité éclatera au tribunal.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327911326l/6892870.jpg"
+  },
+  {
+    "id": "159",
+    "title": "Dragon rouge",
+    "author": "Thomas Harris",
+    "genre": "Thriller",
+    "description": "Will Graham est l'homme qui a arrêté Hannibal Lecter, mais cela lui a presque coûté la vie. Retiré en Floride, il est rappelé pour traquer le « Monstre des pleines lunes », un tueur de familles entières. Pour le comprendre, Graham doit consulter Lecter dans sa cellule.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388204408l/28877.jpg"
+  },
+  {
+    "id": "160",
+    "title": "Hannibal",
+    "author": "Thomas Harris",
+    "genre": "Thriller",
+    "description": "Dix ans après Le Silence des agneaux, Hannibal Lecter vit à Florence sous une fausse identité. Mason Verger, sa seule victime survivante devenue milliardaire défiguré, le traque pour le faire dévorer par des porcs. Clarice Starling, disgraciée, est la seule à pouvoir sauver Lecter.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388367174l/32418.jpg"
+  },
+  {
+    "id": "161",
+    "title": "Shutter Island",
+    "author": "Dennis Lehane",
+    "genre": "Thriller",
+    "description": "1954. Les marshals Teddy Daniels et Chuck Aule arrivent sur Shutter Island, où se trouve Ashecliffe, un hôpital pour criminels aliénés. Une patiente dangereuse s'est échappée de sa cellule verrouillée de l'intérieur. Mais rien n'est ce qu'il semble sur cette île.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503855527l/21686._SY475_.jpg"
+  },
+  {
+    "id": "162",
+    "title": "Mystic River",
+    "author": "Dennis Lehane",
+    "genre": "Thriller",
+    "description": "Boston. Jimmy, Sean et Dave sont amis d'enfance. Un jour, Dave est enlevé et abusé pendant quatre jours. Vingt-cinq ans plus tard, la fille de Jimmy est assassinée. Sean, devenu inspecteur, enquête. Dave est le principal suspect. Les secrets d'un été tragique remontent à la surface.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355962694l/21671.jpg"
+  },
+  {
+    "id": "163",
+    "title": "Le Monde perdu",
+    "author": "Michael Crichton",
+    "genre": "Science-Fiction",
+    "description": "Six ans après le désastre de Jurassic Park, des rumeurs circulent sur des animaux étranges au Costa Rica. Ian Malcolm, qui a survécu à l'île Nublar, découvre que le Site B existe : Isla Sorna, où les dinosaures étaient élevés. Une nouvelle expédition tourne au cauchemar.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529604710l/8650.jpg"
+  },
+  {
+    "id": "164",
+    "title": "Sphere",
+    "author": "Michael Crichton",
+    "genre": "Science-Fiction",
+    "description": "Au fond du Pacifique, on découvre un vaisseau spatial écrasé là depuis 300 ans. Une équipe de scientifiques descend l'examiner. À l'intérieur, ils trouvent une sphère mystérieuse d'origine inconnue. Quand ils entrent en contact avec elle, leurs pensées les plus sombres commencent à se manifester.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1358275295l/455373.jpg"
+  },
+  {
+    "id": "165",
+    "title": "La Proie",
+    "author": "Michael Crichton",
+    "genre": "Science-Fiction",
+    "description": "Jack Forman découvre que le projet secret de sa femme implique des nano-robots capables d'évoluer et d'apprendre. Échappés dans le désert du Nevada, ils forment un essaim prédateur qui devient plus intelligent à chaque génération. Jack doit les arrêter avant qu'ils ne deviennent impossibles à contrôler.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1494347559l/83763.jpg"
+  },
+  {
+    "id": "166",
+    "title": "Les Fourmis",
+    "author": "Bernard Werber",
+    "genre": "Science-Fiction",
+    "description": "Jonathan Wells hérite de l'appartement de son oncle, entomologiste décédé mystérieusement. La cave cache un secret : l'entrée vers le monde des fourmis. Parallèlement, on suit la quête de la fourmi 327e dans sa cité de Bel-o-kan. Deux civilisations s'observent et tentent de communiquer.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1530717068l/90034.jpg"
+  },
+  {
+    "id": "167",
+    "title": "Les Thanatonautes",
+    "author": "Bernard Werber",
+    "genre": "Science-Fiction",
+    "description": "Michael Pinson et Raoul Razorbak ont un projet fou : explorer la mort. Grâce à une technique de coma artificiel, ils deviennent « thanatonautes », navigateurs de la mort. Ils découvrent ce qui se passe après le trépas : le tunnel, la lumière, et les territoires inconnus de l'au-delà.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1479925096l/90201.jpg"
+  },
+  {
+    "id": "168",
+    "title": "L'Empire des anges",
+    "author": "Bernard Werber",
+    "genre": "Science-Fiction",
+    "description": "Michael Pinson est mort. Il devient ange gardien de trois humains : un jeune chanteur de rock, une top model, et le fils d'un dictateur africain. Depuis le Paradis, il doit les guider sans intervenir directement. Mais comment aider quelqu'un qui refuse d'être aidé ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331150327l/90255.jpg"
+  },
+  {
+    "id": "169",
+    "title": "Troisième humanité",
+    "author": "Bernard Werber",
+    "genre": "Science-Fiction",
+    "description": "Des paléontologues découvrent des squelettes de géants de 17 mètres. Ces « Grands » ont été la première humanité. Nous sommes la deuxième. La Terre décide de créer une troisième humanité pour survivre : des humains miniatures de 17 centimètres, adaptés aux défis écologiques.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1401086298l/18078903.jpg"
+  },
+  {
+    "id": "170",
+    "title": "Demain les chats",
+    "author": "Bernard Werber",
+    "genre": "Science-Fiction",
+    "description": "Bastet est une chatte parisienne curieuse du monde. Elle rencontre Pythagore, un chat connecté à Internet par une prise USB. Quand les humains sombrent dans la violence et l'effondrement, les chats doivent prendre leur destin en main. Une fable sur notre civilisation vue par les félins.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473155988l/28646117.jpg"
+  },
+  {
+    "id": "171",
+    "title": "Shogun",
+    "author": "James Clavell",
+    "genre": "Histoire",
+    "description": "1600. Le navigateur anglais John Blackthorne fait naufrage au Japon et devient l'enjeu d'une lutte de pouvoir entre seigneurs féodaux. Capturé par Toranaga, il apprend les coutumes japonaises, tombe amoureux de Mariko, et devient samouraï. Une fresque épique sur le choc des civilisations.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1541324331l/402093._SY475_.jpg"
+  },
+  {
+    "id": "172",
+    "title": "Les Piliers de la Terre",
+    "author": "Ken Follett",
+    "genre": "Histoire",
+    "description": "Angleterre, XIIe siècle. Tom le bâtisseur rêve de construire une cathédrale. Le prieur Philip veut relever le monastère de Kingsbridge. Aliena cherche à venger son père. William Hamleigh ne vit que pour la cruauté. Leurs destins s'entrelacent pendant 40 ans de guerre civile et de passion.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576956100l/5043._SY475_.jpg"
+  },
+  {
+    "id": "173",
+    "title": "Un monde sans fin",
+    "author": "Ken Follett",
+    "genre": "Histoire",
+    "description": "Kingsbridge, XIVe siècle. Quatre enfants découvrent un secret qui va bouleverser leurs vies. Merthin devient bâtisseur, Caris guérisseuse. La peste noire arrive et remet tout en question. L'amour peut-il survivre à l'apocalypse ? Suite des Piliers de la Terre, deux siècles plus tard.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388184131l/5064._SY475_.jpg"
+  },
+  {
+    "id": "174",
+    "title": "L'Arme à l'œil",
+    "author": "Ken Follett",
+    "genre": "Thriller",
+    "description": "1944. L'espion allemand Die Nadel découvre que le débarquement allié prévu à Calais est une feinte : l'invasion aura lieu en Normandie. Il doit transmettre l'information à Berlin. Une femme isolée sur une île écossaise est la seule à pouvoir l'arrêter. Le sort de la guerre dépend d'elle.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320547115l/92364.jpg"
+  },
+  {
+    "id": "175",
+    "title": "Vol au-dessus d'un nid de coucou",
+    "author": "Ken Kesey",
+    "genre": "Classique",
+    "description": "McMurphy, criminel simulant la folie pour éviter la prison, arrive dans un hôpital psychiatrique dirigé par l'inflexible infirmière Ratched. Il entreprend de libérer les patients de son emprise tyrannique. Sa rébellion joyeuse redonne vie aux hommes brisés, mais le système ne tolère pas la dissidence.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516211014l/332613._SY475_.jpg"
+  },
+  {
+    "id": "176",
+    "title": "Orange mécanique",
+    "author": "Anthony Burgess",
+    "genre": "Science-Fiction",
+    "description": "Alex, adolescent dans une Angleterre dystopique, passe ses nuits à commettre des actes de « ultra-violence » avec sa bande de droogs. Arrêté, il subit un traitement expérimental qui le rend incapable de violence — et de choix moral. Mais un homme sans libre arbitre est-il encore humain ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549260060l/227463._SY475_.jpg"
+  },
+  {
+    "id": "177",
+    "title": "Les Raisins de la colère",
+    "author": "John Steinbeck",
+    "genre": "Classique",
+    "description": "Les Joad, fermiers de l'Oklahoma ruinés par la Grande Dépression et les tempêtes de poussière, partent vers la Californie, terre promise. Leur voyage sur la Route 66 révèle l'exploitation des migrants et l'injustice sociale. Prix Pulitzer 1940, le roman qui a changé l'Amérique.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1511302438l/4395._SY475_.jpg"
+  },
+  {
+    "id": "178",
+    "title": "À l'est d'Éden",
+    "author": "John Steinbeck",
+    "genre": "Classique",
+    "description": "Dans la vallée de Salinas, deux familles voient leurs destins liés sur trois générations. L'histoire biblique de Caïn et Abel se rejoue entre frères. Adam Trask et ses jumeaux Cal et Aron, la mystérieuse Cathy Ames. Le libre arbitre peut-il triompher du mal héréditaire ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399031l/4406._SY475_.jpg"
+  },
+  {
+    "id": "179",
+    "title": "Bilbo le Hobbit (version illustrée)",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Cette édition illustrée du classique de Tolkien présente l'aventure de Bilbo Sacquet avec des illustrations somptueuses. Accompagné de Gandalf et treize nains, il part récupérer le trésor gardé par le dragon Smaug. Un voyage qui changera le destin de la Terre du Milieu.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372847500l/5907.jpg"
+  },
+  {
+    "id": "180",
+    "title": "Contes et légendes inachevés",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "description": "Ce recueil rassemble des récits inachevés de la Terre du Milieu : l'histoire de Tuor et sa venue à Gondolin, la chasse au dragon Glaurung, les aventures de Gandalf et les origines des Istari, et bien d'autres fragments qui enrichissent l'univers tolkienien.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348816758l/7329.jpg"
+  },
+  {
+    "id": "181",
+    "title": "La Couleur des sentiments",
+    "author": "Kathryn Stockett",
+    "genre": "Classique",
+    "description": "Jackson, Mississippi, 1962. Skeeter, jeune femme blanche, décide d'écrire un livre donnant la parole aux bonnes noires. Aibileen et Minny acceptent de témoigner malgré les risques. Leurs histoires révèlent l'hypocrisie et la cruauté de la société ségrégationniste du Sud profond.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572940430l/4667024._SY475_.jpg"
+  },
+  {
+    "id": "182",
+    "title": "Avant toi",
+    "author": "Jojo Moyes",
+    "genre": "Romance",
+    "description": "Louisa Clark, 26 ans, accepte un emploi d'aide-soignante auprès de Will Traynor, un jeune homme tétraplégique depuis un accident. Will a décidé de mettre fin à ses jours. Lou a six mois pour lui montrer que la vie vaut la peine d'être vécue. Une histoire d'amour bouleversante.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1490628585l/15507958._SY475_.jpg"
+  },
+  {
+    "id": "183",
+    "title": "Le Cercle littéraire des amateurs d'épluchures de patates",
+    "author": "Mary Ann Shaffer",
+    "genre": "Romance",
+    "description": "1946. L'écrivaine Juliet Ashton reçoit une lettre d'un habitant de Guernesey qui a trouvé un de ses livres. Il lui parle du cercle littéraire créé pendant l'Occupation pour couvrir un cochon clandestin. Intriguée, Juliet découvre une communauté attachante et les cicatrices de la guerre.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327931261l/2728527.jpg"
+  },
+  {
+    "id": "184",
+    "title": "Eleanor & Park",
+    "author": "Rainbow Rowell",
+    "genre": "Romance",
+    "description": "1986. Eleanor, nouvelle au lycée avec ses vêtements bizarres et ses cheveux roux, et Park, fan de comics et de musique, se retrouvent assis côte à côte dans le bus scolaire. Une amitié naît, puis l'amour, tandis qu'Eleanor cache un terrible secret familial.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1402034836l/15745753.jpg"
+  },
+  {
+    "id": "185",
+    "title": "Aristote et Dante découvrent les secrets de l'univers",
+    "author": "Benjamin Alire Sáenz",
+    "genre": "Romance",
+    "description": "El Paso, 1987. Ari, quinze ans, est un solitaire en colère. Dante est un garçon souriant qui sait nager. Leur rencontre à la piscine municipale est le début d'une amitié transformatrice. Ensemble, ils explorent l'identité, la famille et les secrets que l'on garde pour soi.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328320260l/12000020.jpg"
+  },
+  {
+    "id": "186",
+    "title": "Fangirl",
+    "author": "Rainbow Rowell",
+    "genre": "Romance",
+    "description": "Cath écrit des fanfictions sur Simon Snow (un sorcier très populaire). À l'université, elle doit gérer sa sœur jumelle qui prend ses distances, un colocataire grognon nommé Levi, et la fin de sa saga préférée. Peut-on grandir sans renoncer à ses passions ?",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355886270l/16068905.jpg"
+  },
+  {
+    "id": "187",
+    "title": "Six of Crows",
+    "author": "Leigh Bardugo",
+    "genre": "Fantasy",
+    "description": "Kaz Brekker, prodige du crime de 17 ans, reçoit une offre impossible : s'introduire dans la forteresse la plus imprenable du monde et enlever un scientifique. Il rassemble une équipe de marginaux et de hors-la-loi. Un casse impossible dans un monde de magie et de danger.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651710803l/23437156._SY475_.jpg"
+  },
+  {
+    "id": "188",
+    "title": "Crooked Kingdom",
+    "author": "Leigh Bardugo",
+    "genre": "Fantasy",
+    "description": "Kaz et son équipe ont réussi l'impossible, mais ils ont été trahis. Inej est prisonnière. Pour la récupérer et se venger, Kaz doit affronter les plus puissants marchands de Ketterdam et un ennemi qui connaît tous ses points faibles. La guerre des gangs n'a jamais été aussi mortelle.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451415965l/22299763.jpg"
+  },
+  {
+    "id": "189",
+    "title": "Shadow and Bone",
+    "author": "Leigh Bardugo",
+    "genre": "Fantasy",
+    "description": "Alina Starkov, orpheline et cartographe de l'armée de Ravka, découvre qu'elle possède un pouvoir extraordinaire : invoquer la lumière. Elle est emmenée au Petit Palais pour rejoindre les Grisha, manipulateurs des éléments. Mais le Darkling, leur chef, cache de sombres desseins.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1339533695l/10194157.jpg"
+  },
+  {
+    "id": "190",
+    "title": "La Passe-miroir : Les Fiancés de l'hiver",
+    "author": "Christelle Dabos",
+    "genre": "Fantasy",
+    "description": "Ophélie vit sur Anima, une arche où les objets s'animent. Elle peut lire le passé des objets et traverser les miroirs. Contre son gré, elle est fiancée à Thorn, un homme glacial du Pôle. Elle découvre un monde de complots et de pouvoirs où sa vie est en danger.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1569069037l/29868709._SY475_.jpg"
+  },
+  {
+    "id": "191",
+    "title": "La Passe-miroir : Les Disparus du Clairdelune",
+    "author": "Christelle Dabos",
+    "genre": "Fantasy",
+    "description": "Ophélie est devenue vice-conteuse à la cour de Farouk. Mais des courtisans disparaissent mystérieusement. Ophélie mène l'enquête avec l'aide de Thorn, toujours aussi énigmatique. Les secrets de l'arche du Pôle et de l'Éclat de Dieu se dévoilent peu à peu.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1521458756l/39665294._SY475_.jpg"
+  },
+  {
+    "id": "192",
+    "title": "Uglies",
+    "author": "Scott Westerfeld",
+    "genre": "Science-Fiction",
+    "description": "Dans un futur où tout le monde devient « Pretty » à 16 ans grâce à une opération, Tally Youngblood attend son tour avec impatience. Mais son amie Shay s'enfuit vers une communauté rebelle. Tally doit la retrouver ou ne jamais devenir jolie. Ce qu'elle découvre changera tout.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650039327l/24770.jpg"
+  },
+  {
+    "id": "193",
+    "title": "Delirium",
+    "author": "Lauren Oliver",
+    "genre": "Science-Fiction",
+    "description": "Dans un futur où l'amour est considéré comme une maladie mortelle, tous les citoyens subissent une opération à 18 ans pour en être guéris. Lena attend le jour avec impatience. Mais à 95 jours de l'intervention, elle rencontre Alex, un Invalide venu des Terres Sauvages.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328809974l/11614718.jpg"
+  },
+  {
+    "id": "194",
+    "title": "Matched",
+    "author": "Ally Condie",
+    "genre": "Science-Fiction",
+    "description": "Dans la Société, les Officials décident de tout : ce que vous mangez, où vous travaillez, qui vous épousez. Le jour de son Banquet de Couplage, Cassia voit le visage de Xander, son meilleur ami. Mais un autre visage apparaît : celui de Ky, un Aberration. Cassia doit choisir.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1319394291l/7735333.jpg"
+  },
+  {
+    "id": "195",
+    "title": "Legend",
+    "author": "Marie Lu",
+    "genre": "Science-Fiction",
+    "description": "Los Angeles, dans ce qui reste des États-Unis. Day est le criminel le plus recherché de la République. June est le prodige de l'armée. Quand le frère de June est assassiné et Day accusé, leurs chemins se croisent. Mais la vérité est plus complexe que ce que le gouvernement leur raconte.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361975703l/9275658.jpg"
+  },
+  {
+    "id": "196",
+    "title": "Red Queen",
+    "author": "Victoria Aveyard",
+    "genre": "Fantasy",
+    "description": "Mare Barrow vit dans un monde divisé entre les Rouges, gens du commun au sang rouge, et les Argents, élite au sang argenté dotée de pouvoirs. Quand Mare découvre qu'elle possède un pouvoir mortel malgré son sang rouge, elle est forcée de jouer un rôle dangereux à la cour du roi.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421710437l/22328546.jpg"
+  },
+  {
+    "id": "197",
+    "title": "Cinder",
+    "author": "Marissa Meyer",
+    "genre": "Science-Fiction",
+    "description": "Cinder est une cyborg, citoyenne de seconde classe dans le Nouveau Beijing. Elle est aussi la meilleure mécanicienne de la ville. Quand le prince Kai lui apporte un androïde à réparer, sa vie bascule. Une épidémie mortelle menace, et Cinder cache un secret qui pourrait tout changer.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1565564417l/36381037._SY475_.jpg"
+  },
+  {
+    "id": "198",
+    "title": "Caraval",
+    "author": "Stephanie Garber",
+    "genre": "Fantasy",
+    "description": "Scarlett rêve depuis toujours d'assister à Caraval, le spectacle magique du légendaire Maître Legend. Quand elle reçoit enfin une invitation, elle découvre que le jeu est plus réel qu'il n'y paraît. Sa sœur Tella a été enlevée et fait partie du spectacle. Scarlett a cinq nuits pour la retrouver.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1481153843l/27883214.jpg"
+  },
+  {
+    "id": "199",
+    "title": "The Cruel Prince",
+    "author": "Holly Black",
+    "genre": "Fantasy",
+    "description": "Jude a été emmenée au royaume de Faerie quand elle avait sept ans, après l'assassinat de ses parents. Dix ans plus tard, elle veut sa place parmi les fées immortelles et cruelles. Mais le prince Cardan, le plus méchant d'entre eux, semble déterminé à la détruire.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587056268l/26032825._SY475_.jpg"
+  },
+  {
+    "id": "200",
+    "title": "Un palais d'épines et de roses",
+    "author": "Sarah J. Maas",
+    "genre": "Fantasy",
+    "description": "Feyre, chasseuse de 19 ans, tue un loup dans la forêt pour nourrir sa famille. Mais le loup était un fae déguisé, et un autre fae vient la chercher. Emmenée dans le royaume enchanté de Prythian, elle découvre un monde de magie, de danger et un seigneur fae au cœur de glace.",
+    "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620098407l/50659467.jpg"
+  }
 ]

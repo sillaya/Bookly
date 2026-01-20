@@ -24,7 +24,7 @@ class ProfilScreen extends StatelessWidget {
                   _buildHeader(),
 
                   // Avatar et nom
-                  _buildProfileCard(),
+                  _buildProfileCard(context, provider),
 
                   // Statistiques
                   _buildStatsSection(stats),
@@ -59,7 +59,7 @@ class ProfilScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileCard() {
+  Widget _buildProfileCard(BuildContext context, BookProvider provider) {
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(20),
@@ -87,15 +87,15 @@ class ProfilScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 16),
-          
+
           // Infos
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Lecteur Bookly',
-                  style: TextStyle(
+                Text(
+                  provider.userName,
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: AppColors.primary,
@@ -112,16 +112,67 @@ class ProfilScreen extends StatelessWidget {
               ],
             ),
           ),
-          
+
           // Edit button
           IconButton(
             icon: Icon(
               Icons.edit_outlined,
               color: AppColors.primary.withValues(alpha: 0.5),
             ),
-            onPressed: () {
-              // TODO: Édition du profil
+            onPressed: () => _showEditNameDialog(context, provider),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showEditNameDialog(BuildContext context, BookProvider provider) {
+    final controller = TextEditingController(text: provider.userName);
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        backgroundColor: AppColors.background,
+        title: const Text('Modifier votre nom'),
+        content: TextField(
+          controller: controller,
+          decoration: InputDecoration(
+            hintText: 'Entrez votre nom',
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: AppColors.primary),
+            ),
+          ),
+          autofocus: true,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Annuler'),
+          ),
+          TextButton(
+            onPressed: () async {
+              final newName = controller.text.trim();
+              if (newName.isNotEmpty) {
+                await provider.updateUserName(newName);
+                if (context.mounted) {
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Nom mis à jour'),
+                      backgroundColor: AppColors.primary,
+                    ),
+                  );
+                }
+              }
             },
+            child: const Text(
+              'Enregistrer',
+              style: TextStyle(fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),
@@ -320,14 +371,15 @@ class ProfilScreen extends StatelessWidget {
           TextButton(
             onPressed: () async {
               Navigator.pop(context);
-              // TODO: Implémenter clearAllData dans le provider
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Données réinitialisées'),
-                  backgroundColor: AppColors.primary,
-                ),
-              );
-              provider.loadBooks();
+              await provider.clearAllData();
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Données réinitialisées'),
+                    backgroundColor: AppColors.primary,
+                  ),
+                );
+              }
             },
             child: const Text(
               'Réinitialiser',

@@ -171,7 +171,7 @@ class BookCard extends StatelessWidget {
 
   Widget _buildActions(BuildContext context) {
     final provider = Provider.of<BookProvider>(context, listen: false);
-    
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -186,19 +186,40 @@ class BookCard extends StatelessWidget {
           constraints: const BoxConstraints(),
           padding: const EdgeInsets.all(8),
         ),
-        
-        // Lu
+
+        // Lu - show rating dialog if not read
         IconButton(
           icon: Icon(
             book.isRead ? Icons.check_circle : Icons.check_circle_outline,
             color: book.isRead ? Colors.green : AppColors.primary.withValues(alpha: 0.4),
             size: 22,
           ),
-          onPressed: () => provider.toggleRead(book),
+          onPressed: () {
+            if (book.isRead) {
+              // Already read, just toggle off
+              provider.toggleRead(book);
+            } else {
+              // Need to rate before marking as read
+              _showRatingDialog(context, provider);
+            }
+          },
           constraints: const BoxConstraints(),
           padding: const EdgeInsets.all(8),
         ),
       ],
+    );
+  }
+
+  void _showRatingDialog(BuildContext context, BookProvider provider) {
+    showDialog(
+      context: context,
+      builder: (context) => _RatingDialog(
+        book: book,
+        onRate: (rating) {
+          provider.updateRating(book, rating);
+          Navigator.pop(context);
+        },
+      ),
     );
   }
 
@@ -353,8 +374,8 @@ class BookDetailsSheet extends StatelessWidget {
                 children: [
                   Expanded(
                     child: _ActionButton(
-                      icon: currentBook.isFavorite 
-                        ? Icons.favorite 
+                      icon: currentBook.isFavorite
+                        ? Icons.favorite
                         : Icons.favorite_border,
                       label: currentBook.isFavorite ? 'Favori' : 'Ajouter aux favoris',
                       isActive: currentBook.isFavorite,
@@ -365,13 +386,28 @@ class BookDetailsSheet extends StatelessWidget {
                   const SizedBox(width: 12),
                   Expanded(
                     child: _ActionButton(
-                      icon: currentBook.isRead 
-                        ? Icons.check_circle 
+                      icon: currentBook.isRead
+                        ? Icons.check_circle
                         : Icons.check_circle_outline,
                       label: currentBook.isRead ? 'Lu' : 'Marquer comme lu',
                       isActive: currentBook.isRead,
                       activeColor: Colors.green,
-                      onTap: () => provider.toggleRead(currentBook),
+                      onTap: () {
+                        if (currentBook.isRead) {
+                          provider.toggleRead(currentBook);
+                        } else if (currentBook.rating > 0) {
+                          // Already rated, can mark as read
+                          provider.toggleRead(currentBook);
+                        } else {
+                          // Need to rate first - show message
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Veuillez d\'abord noter le livre ci-dessus'),
+                              backgroundColor: AppColors.primary,
+                            ),
+                          );
+                        }
+                      },
                     ),
                   ),
                 ],
@@ -601,8 +637,8 @@ class CompactBookCard extends StatelessWidget {
                   return Icon(
                     index < book.rating ? Icons.star : Icons.star_outline,
                     size: 12,
-                    color: index < book.rating 
-                      ? AppColors.accent 
+                    color: index < book.rating
+                      ? AppColors.accent
                       : AppColors.primary.withValues(alpha: 0.2),
                   );
                 }),
@@ -611,6 +647,101 @@ class CompactBookCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Dialog pour noter un livre avant de le marquer comme lu
+class _RatingDialog extends StatefulWidget {
+  final dynamic book;
+  final Function(int) onRate;
+
+  const _RatingDialog({
+    required this.book,
+    required this.onRate,
+  });
+
+  @override
+  State<_RatingDialog> createState() => _RatingDialogState();
+}
+
+class _RatingDialogState extends State<_RatingDialog> {
+  int _selectedRating = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: AppColors.background,
+      title: const Text(
+        'Noter ce livre',
+        style: TextStyle(
+          color: AppColors.primary,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'Vous devez noter "${widget.book.title}" pour le marquer comme lu.',
+            style: TextStyle(
+              fontSize: 14,
+              color: AppColors.primary.withValues(alpha: 0.7),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(5, (index) {
+              final starIndex = index + 1;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedRating = starIndex;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: Icon(
+                    starIndex <= _selectedRating
+                        ? Icons.star_rounded
+                        : Icons.star_outline_rounded,
+                    size: 40,
+                    color: starIndex <= _selectedRating
+                        ? AppColors.accent
+                        : AppColors.primary.withValues(alpha: 0.3),
+                  ),
+                ),
+              );
+            }),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context),
+          child: Text(
+            'Annuler',
+            style: TextStyle(
+              color: AppColors.primary.withValues(alpha: 0.6),
+            ),
+          ),
+        ),
+        TextButton(
+          onPressed: _selectedRating > 0
+              ? () => widget.onRate(_selectedRating)
+              : null,
+          child: Text(
+            'Confirmer',
+            style: TextStyle(
+              color: _selectedRating > 0
+                  ? AppColors.primary
+                  : AppColors.primary.withValues(alpha: 0.3),
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

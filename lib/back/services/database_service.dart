@@ -26,7 +26,7 @@ class DatabaseService {
 
     return await openDatabase(
       path,
-      version: 2, // Version 2 pour le support du rating
+      version: 3, // Version 3 pour le support du profil utilisateur
       onCreate: _createDB,
       onUpgrade: _upgradeDB,
     );
@@ -42,7 +42,17 @@ class DatabaseService {
         rating INTEGER DEFAULT 0
       )
     ''');
-    
+
+    await db.execute('''
+      CREATE TABLE user_profile (
+        id INTEGER PRIMARY KEY,
+        name TEXT DEFAULT 'Lecteur Bookly'
+      )
+    ''');
+
+    // Insert default profile
+    await db.insert('user_profile', {'id': 1, 'name': 'Lecteur Bookly'});
+
     print('✅ Base de données créée avec succès');
   }
 
@@ -52,6 +62,18 @@ class DatabaseService {
       // Ajouter la colonne rating si elle n'existe pas
       await db.execute('ALTER TABLE user_books ADD COLUMN rating INTEGER DEFAULT 0');
       print('✅ Migration: colonne rating ajoutée');
+    }
+    if (oldVersion < 3) {
+      // Ajouter la table user_profile
+      await db.execute('''
+        CREATE TABLE IF NOT EXISTS user_profile (
+          id INTEGER PRIMARY KEY,
+          name TEXT DEFAULT 'Lecteur Bookly'
+        )
+      ''');
+      await db.insert('user_profile', {'id': 1, 'name': 'Lecteur Bookly'},
+        conflictAlgorithm: ConflictAlgorithm.ignore);
+      print('✅ Migration: table user_profile ajoutée');
     }
   }
 
@@ -239,6 +261,40 @@ class DatabaseService {
       print('✅ Toutes les données utilisateur effacées');
     } catch (e) {
       print('❌ Erreur clearAllData: $e');
+      rethrow;
+    }
+  }
+
+  // ==================== USER PROFILE ====================
+
+  /// Récupère le nom de l'utilisateur
+  Future<String> getUserName() async {
+    try {
+      final db = await instance.database;
+      final result = await db.query('user_profile', where: 'id = ?', whereArgs: [1]);
+      if (result.isNotEmpty) {
+        return result.first['name'] as String? ?? 'Lecteur Bookly';
+      }
+      return 'Lecteur Bookly';
+    } catch (e) {
+      print('❌ Erreur getUserName: $e');
+      return 'Lecteur Bookly';
+    }
+  }
+
+  /// Met à jour le nom de l'utilisateur
+  Future<void> updateUserName(String name) async {
+    try {
+      final db = await instance.database;
+      final existing = await db.query('user_profile', where: 'id = ?', whereArgs: [1]);
+      if (existing.isEmpty) {
+        await db.insert('user_profile', {'id': 1, 'name': name});
+      } else {
+        await db.update('user_profile', {'name': name}, where: 'id = ?', whereArgs: [1]);
+      }
+      print('✅ Nom utilisateur mis à jour: $name');
+    } catch (e) {
+      print('❌ Erreur updateUserName: $e');
       rethrow;
     }
   }

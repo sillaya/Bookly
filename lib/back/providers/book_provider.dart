@@ -12,6 +12,7 @@ class BookProvider with ChangeNotifier {
   String? _error;
   String _searchQuery = '';
   String _selectedGenre = '';
+  String _userName = 'Lecteur Bookly';
 
   // ==================== GETTERS ====================
   List<Book> get books => _books;
@@ -19,6 +20,7 @@ class BookProvider with ChangeNotifier {
   String? get error => _error;
   String get searchQuery => _searchQuery;
   String get selectedGenre => _selectedGenre;
+  String get userName => _userName;
 
   /// Livres favoris
   List<Book> get favoriteBooks => _books.where((b) => b.isFavorite).toList();
@@ -57,75 +59,127 @@ class BookProvider with ChangeNotifier {
   }
 
   // ==================== ALGORITHME DE RECOMMANDATION ====================
-  
+
   /// Livres recommandés basés sur les préférences utilisateur
-  /// Pondération: 50% Genre + 30% Auteur + 20% Rating
+  /// Pondération: 40% favoris + 60% livres lus avec 4+ étoiles (ou 3 si pas de 4+)
+  /// Retourne 20 livres recommandés
   List<Book> get recommendedBooks {
-    // Livres que l'utilisateur a aimés (favoris, lus, ou notés)
-    final likedBooks = _books.where((b) => 
-      b.isFavorite || b.isRead || b.rating > 0
-    ).toList();
+    // Séparer les livres favoris et les livres bien notés
+    final favoriteBooks = _books.where((b) => b.isFavorite).toList();
 
-    // Si aucun historique, retourne tous les livres
-    if (likedBooks.isEmpty) return _books;
+    // Livres lus avec bonnes notes (4+ étoiles prioritaire, sinon 3 étoiles)
+    final highRatedBooks = _books.where((b) => b.isRead && b.rating >= 4).toList();
+    final midRatedBooks = _books.where((b) => b.isRead && b.rating == 3).toList();
 
-    // Comptabilisation des genres préférés
+    // Utiliser les livres 4+ étoiles, sinon fallback sur 3 étoiles
+    final ratedBooksForAlgo = highRatedBooks.isNotEmpty ? highRatedBooks : midRatedBooks;
+
+    // Si aucun historique, retourne les premiers livres
+    if (favoriteBooks.isEmpty && ratedBooksForAlgo.isEmpty) {
+      return _books.take(20).toList();
+    }
+
+    // Comptabilisation des genres et auteurs préférés
     Map<String, double> genreScores = {};
     Map<String, double> authorScores = {};
 
-    for (var book in likedBooks) {
-      // Poids basé sur le rating (1-5) ou 3 par défaut si juste favori/lu
-      double weight = book.rating > 0 ? book.rating.toDouble() : 3.0;
-      
-      // Bonus si favori
-      if (book.isFavorite) weight += 1.0;
-      
-      genreScores[book.genre] = (genreScores[book.genre] ?? 0) + weight;
-      authorScores[book.author] = (authorScores[book.author] ?? 0) + weight;
+    // Score des favoris (40% du poids total)
+    for (var book in favoriteBooks) {
+      double weight = 4.0; // Poids de base pour favoris
+      genreScores[book.genre] = (genreScores[book.genre] ?? 0) + weight * 0.4;
+      authorScores[book.author] = (authorScores[book.author] ?? 0) + weight * 0.4;
+    }
+
+    // Score des livres bien notés (60% du poids total)
+    for (var book in ratedBooksForAlgo) {
+      double weight = book.rating.toDouble(); // Poids basé sur la note (3, 4 ou 5)
+      genreScores[book.genre] = (genreScores[book.genre] ?? 0) + weight * 0.6;
+      authorScores[book.author] = (authorScores[book.author] ?? 0) + weight * 0.6;
     }
 
     // Normalisation
     double maxGenreScore = genreScores.values.fold(0.0, (a, b) => a > b ? a : b);
     double maxAuthorScore = authorScores.values.fold(0.0, (a, b) => a > b ? a : b);
-    
+
     if (maxGenreScore == 0) maxGenreScore = 1;
     if (maxAuthorScore == 0) maxAuthorScore = 1;
 
     // Livres candidats (non lus et non favoris)
-    List<Book> candidates = _books.where((b) => 
+    List<Book> candidates = _books.where((b) =>
       !b.isRead && !b.isFavorite
     ).toList();
 
     // Calcul du score de recommandation pour chaque candidat
     List<MapEntry<Book, double>> scoredCandidates = candidates.map((book) {
-      // Score Genre (50%)
+      // Score Genre (60% de l'importance)
       double genreWeight = (genreScores[book.genre] ?? 0) / maxGenreScore;
-      double genreScore = genreWeight * 50;
+      double genreScore = genreWeight * 60;
 
-      // Score Auteur (30%)
+      // Score Auteur (40% de l'importance)
       double authorWeight = (authorScores[book.author] ?? 0) / maxAuthorScore;
-      double authorScore = authorWeight * 30;
+      double authorScore = authorWeight * 40;
 
-      // Score basé sur la moyenne des notes du genre (20%)
-      double ratingScore = 0;
-      final genreRatedBooks = likedBooks.where((b) => 
-        b.genre == book.genre && b.rating > 0
-      );
-      if (genreRatedBooks.isNotEmpty) {
-        double avgRating = genreRatedBooks
-          .map((b) => b.rating)
-          .reduce((a, b) => a + b) / genreRatedBooks.length;
-        ratingScore = (avgRating / 5) * 20;
-      }
-
-      double totalScore = genreScore + authorScore + ratingScore;
+      double totalScore = genreScore + authorScore;
       return MapEntry(book, totalScore);
     }).toList();
 
     // Tri par score décroissant
     scoredCandidates.sort((a, b) => b.value.compareTo(a.value));
 
-    return scoredCandidates.map((e) => e.key).toList();
+    // Retourner les 20 meilleurs
+    return scoredCandidates.take(20).map((e) => e.key).toList();
+  }
+
+  /// Livres à découvrir - livres avec des genres/auteurs différents des préférences
+  /// Retourne 30-40 livres pour élargir les horizons de lecture
+  List<Book> get discoverBooks {
+    // Genres et auteurs déjà connus de l'utilisateur
+    final knownGenres = <String>{};
+    final knownAuthors = <String>{};
+
+    for (var book in _books) {
+      if (book.isFavorite || book.isRead) {
+        knownGenres.add(book.genre);
+        knownAuthors.add(book.author);
+      }
+    }
+
+    // Livres candidats (non lus et non favoris)
+    List<Book> candidates = _books.where((b) =>
+      !b.isRead && !b.isFavorite
+    ).toList();
+
+    // Si pas d'historique, mélanger et retourner
+    if (knownGenres.isEmpty) {
+      candidates.shuffle();
+      return candidates.take(35).toList();
+    }
+
+    // Calculer le score de "découverte" - plus élevé si genre/auteur inconnu
+    List<MapEntry<Book, double>> scoredCandidates = candidates.map((book) {
+      double score = 0;
+
+      // Bonus si genre inconnu (plus de diversité)
+      if (!knownGenres.contains(book.genre)) {
+        score += 50;
+      }
+
+      // Bonus si auteur inconnu
+      if (!knownAuthors.contains(book.author)) {
+        score += 30;
+      }
+
+      // Petit bonus aléatoire pour varier les résultats
+      score += (book.id.hashCode % 20).toDouble();
+
+      return MapEntry(book, score);
+    }).toList();
+
+    // Tri par score décroissant (nouveaux genres/auteurs en premier)
+    scoredCandidates.sort((a, b) => b.value.compareTo(a.value));
+
+    // Retourner entre 30 et 40 livres
+    return scoredCandidates.take(35).map((e) => e.key).toList();
   }
 
   // ==================== DATA LOADING ====================
@@ -140,9 +194,12 @@ class BookProvider with ChangeNotifier {
       // Charger les données JSON
       final String response = await rootBundle.loadString('assets/book.json');
       final List<dynamic> data = json.decode(response);
-      
+
       // Charger les statuts utilisateur depuis SQLite
       final userStatus = await DatabaseService.instance.getAllUserBooks();
+
+      // Charger le nom utilisateur
+      _userName = await DatabaseService.instance.getUserName();
 
       // Combiner les données
       _books = data.map((item) {
@@ -159,6 +216,18 @@ class BookProvider with ChangeNotifier {
     } finally {
       _isLoading = false;
       notifyListeners();
+    }
+  }
+
+  /// Met à jour le nom de l'utilisateur
+  Future<void> updateUserName(String name) async {
+    try {
+      await DatabaseService.instance.updateUserName(name);
+      _userName = name;
+      notifyListeners();
+    } catch (e) {
+      debugPrint('❌ Erreur updateUserName: $e');
+      rethrow;
     }
   }
 
@@ -240,6 +309,23 @@ class BookProvider with ChangeNotifier {
     _searchQuery = '';
     _selectedGenre = '';
     notifyListeners();
+  }
+
+  /// Réinitialiser toutes les données utilisateur
+  Future<void> clearAllData() async {
+    try {
+      await DatabaseService.instance.clearAllData();
+      // Reset all books to default state
+      _books = _books.map((book) => book.copyWith(
+        isFavorite: false,
+        isRead: false,
+        rating: 0,
+      )).toList();
+      notifyListeners();
+    } catch (e) {
+      debugPrint('❌ Erreur clearAllData: $e');
+      rethrow;
+    }
   }
 
   // ==================== STATISTICS ====================

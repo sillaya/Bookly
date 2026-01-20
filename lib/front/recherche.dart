@@ -376,8 +376,9 @@ class _GridBookCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Image
-          Expanded(
+          // Image avec taille fixe
+          AspectRatio(
+            aspectRatio: 0.65,
             child: Stack(
               children: [
                 ClipRRect(
@@ -385,6 +386,7 @@ class _GridBookCard extends StatelessWidget {
                   child: Image.network(
                     book.imageUrl,
                     width: double.infinity,
+                    height: double.infinity,
                     fit: BoxFit.cover,
                     errorBuilder: (c, e, s) => Container(
                       decoration: BoxDecoration(
@@ -399,7 +401,7 @@ class _GridBookCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+
                 // Badge favori/lu
                 if (book.isFavorite || book.isRead)
                   Positioned(
@@ -426,7 +428,7 @@ class _GridBookCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 6),
-          
+
           // Titre
           Text(
             book.title,
@@ -440,7 +442,7 @@ class _GridBookCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 2),
-          
+
           // Auteur
           Text(
             book.author,
